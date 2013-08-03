@@ -1,0 +1,28 @@
+ul.stockpile {
+  display: none;
+}
+
+body {
+  font-size: 8em;
+  color: grey;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: block;
+  width: 25%;
+  float: left;
+  text-align: center;
+  margin: -1px;
+  border: 1px solid #CCC;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
