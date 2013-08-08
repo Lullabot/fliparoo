@@ -9,7 +9,7 @@ body {
 }
 
 ul {
-  margin: 0;
+  margin: .5em 0 0 0;
   padding: 0;
   list-style: none;
 }
@@ -25,5 +25,3 @@ li {
   position: relative;
   box-sizing: border-box;
 }
-
-
