@@ -1,20 +1,27 @@
-ul.stockpile {
-  display: none;
-}
-
 body {
-  font-size: 8em;
-  color: grey;
   margin: 0;
 }
 
+h3 {
+  margin: 1em 0 0 0;
+}
+
 ul {
-  margin: .5em 0 0 0;
+  font-size: 8em;
+  color: grey;
+  margin: 0 0 .5em 0;
   padding: 0;
   list-style: none;
 }
 
-li {
+ul.stockpile {
+  display: none;
+}
+
+ul.display {
+}
+
+ul.display li {
   display: block;
   float: left;
   width: 25%;
@@ -24,4 +31,13 @@ li {
   border: 1px solid #CCC;
   position: relative;
   box-sizing: border-box;
+  background-color: #FFF;
+}
+
+ul.single li {
+  display: block;
+  float: left;
+  width: 20%;
+  text-align: center;
+  background-color: #fffca8;
 }
