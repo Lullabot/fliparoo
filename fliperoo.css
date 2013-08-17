@@ -25,10 +25,9 @@
 
 .fliperoo-back {
   z-index: 0;
-  /* the following assumes rotation on the Y axis */
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  transform: rotateY(180deg);
   position: absolute;
+}
+
+.fliperoo-animating {
+  z-index: 100;
 }
