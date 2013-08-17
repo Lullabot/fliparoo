@@ -27,11 +27,13 @@ ul.display li {
   width: 25%;
   min-width: 25%;
   text-align: center;
-  margin: -1px;
+  /*position: relative;
+  box-sizing: border-box;*/
+}
+
+ul.display li .fliperoo-display {
+  background-color: #fff;
   border: 1px solid #CCC;
-  position: relative;
-  box-sizing: border-box;
-  background-color: #FFF;
 }
 
 ul.single li {
@@ -39,5 +41,21 @@ ul.single li {
   float: left;
   width: 20%;
   text-align: center;
-  background-color: #fffca8;
+}
+
+ul.single li .fliperoo-display {
+  color: #fff;
+  background-color: #666;
+  border: 2px #CCC solid;
+  box-sizing: border-box;
+}
+
+ul#kittens li {
+  display: block;
+  float: left;
+}
+
+ul#kittens li .fliperoo-display {
+  height: 160px;
+  overflow: hidden;
 }
