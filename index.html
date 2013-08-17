@@ -13,14 +13,28 @@
   
   <script type="text/javascript" charset="utf-8">
     $().ready(function(){
+      
+      
       $('.display').fliperoo($('.stockpile'), {randomize: false});
+      
+      $('.single').fliperoo({
+        randomize: true, 
+        displayCount: 5, 
+        delay: 0, 
+        transTime: 2000,
+        transition: {perspective: '1000px', rotateY: '-=180deg'},
+        easing: 'cubic-bezier(.06,.71,.34,.98)'
+        });
+        
+      $('#kittens').fliperoo({delay: 100});
+      
     });
   </script>
   
 </head>
 <body>
 
-  <h3>Display & Stockpile list:</h3>
+  <h3 id="double">Display & Stockpile list:</h3>
   <ul class="display">
     <li>1</li>
     <li>2</li>
@@ -38,7 +52,7 @@
     <li>12</li>
   </ul>
   
-  <h3>Single Display list:</h3>
+  <h3 id="single">Single Display list:</h3>
   <ul class="single">
     <li>1</li>
     <li>2</li>
@@ -52,6 +66,23 @@
     <li>10</li>
     <li>11</li>
     <li>12</li>
+  </ul>
+  
+  
+  <h3 id="images">Images:</h3>
+  <ul id="kittens">
+    <li><a href="http://www.flickr.com/photos/merlijnhoek/2841785343/" title="Crazy Kitten? // Nikkor 50mm 1.4 by Merlijn Hoek, on Flickr"><img src="http://farm4.staticflickr.com/3033/2841785343_e166fb4396_m.jpg" width="240" height="161" alt="Crazy Kitten? // Nikkor 50mm 1.4"></a></li>
+    <li><a href="http://www.flickr.com/photos/evapro/349535809/" title="Tony's Cat by eva101, on Flickr"><img src="http://farm1.staticflickr.com/127/349535809_df2deac900_m.jpg" width="240" height="194" alt="Tony's Cat"></a></li>
+    <li><a href="http://www.flickr.com/photos/sergiu_bacioiu/3930657923/" title="Meaw by Sergiu Bacioiu, on Flickr"><img src="http://farm3.staticflickr.com/2470/3930657923_0b0f00f833_m.jpg" width="240" height="159" alt="Meaw"></a></li>
+    <li><a href="http://www.flickr.com/photos/uomoelettrico/2154843552/" title="Feel good! by uomoelettrico, on Flickr"><img src="http://farm3.staticflickr.com/2013/2154843552_59a2c048bf_m.jpg" width="240" height="180" alt="Feel good!"></a></li>
+    <li><a href="http://www.flickr.com/photos/artisticrichmond/2716147621/" title="He's Sneaky [EXPLORE] by Henry Stern, on Flickr"><img src="http://farm4.staticflickr.com/3106/2716147621_3747e52b82_m.jpg" width="240" height="160" alt="He's Sneaky [EXPLORE]"></a></li>
+    <li><a href="http://www.flickr.com/photos/enrique_mendez/5820595170/" title="blue eyes by MendezEnrique, on Flickr"><img src="http://farm4.staticflickr.com/3529/5820595170_a82dbd2631_m.jpg" width="240" height="160" alt="blue eyes"></a></li>
+    <li><a href="http://www.flickr.com/photos/tommyhj/146236125/" title="Nap time by Tommy Hemmert Olesen, on Flickr"><img src="http://farm1.staticflickr.com/56/146236125_1d40f16384_m.jpg" width="240" height="160" alt="Nap time"></a></li>
+    <li><a href="http://www.flickr.com/photos/snowriderguy/37343192/" title="BETWEEN THE RAILINGS by boston_camera, on Flickr"><img src="http://farm1.staticflickr.com/27/37343192_b149f839f9_m.jpg" width="240" height="180" alt="BETWEEN THE RAILINGS"></a></li>
+    <li><a href="http://www.flickr.com/photos/sergiu_bacioiu/4327564714/" title="Meow Man by Sergiu Bacioiu, on Flickr"><img src="http://farm3.staticflickr.com/2720/4327564714_ab1c8abe25_m.jpg" width="240" height="159" alt="Meow Man"></a></li>
+    <li><a href="http://www.flickr.com/photos/sicoactiva/93396555/" title="me pareció ver un lindo gatito! by RubioBuitrago, on Flickr"><img src="http://farm1.staticflickr.com/28/93396555_f197042b50_m.jpg" width="240" height="160" alt="me pareció ver un lindo gatito!"></a></li>
+    <li><a href="http://www.flickr.com/photos/merlijnhoek/2791728529/" title="Shetti sleeping by Merlijn Hoek, on Flickr"><img src="http://farm4.staticflickr.com/3194/2791728529_423fa9aeb6_m.jpg" width="240" height="161" alt="Shetti sleeping"></a></li>
+    <li><a href="http://www.flickr.com/photos/chungholeung/8738541536/" title="Innocence by Chung Ho Leung, on Flickr"><img src="http://farm8.staticflickr.com/7283/8738541536_8a534bcb94_m.jpg" width="240" height="160" alt="Innocence"></a></li>
   </ul>
   
 </body>
