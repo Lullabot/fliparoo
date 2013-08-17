@@ -9,20 +9,23 @@
 .fliperoo-display {
   width: 100%;
   height: 100%;
-  /*-webkit-backface-visibility: hidden;
-  -moz-backface-visibility:    hidden;
-  -ms-backface-visibility:     hidden;
-  backface-visibility: hidden;*/
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
   top: 0;
   left: 0;
+  box-sizing: border-box;
 }
 
 .fliperoo-front {
-  z-index: 5;
+  z-index: 2;
+  position: relative;
 }
 
 .fliperoo-back {
-  z-index: 5;
+  z-index: 0;
+  /* the following assumes rotation on the Y axis */
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
