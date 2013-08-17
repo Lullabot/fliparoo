@@ -30,6 +30,7 @@ Fliperoo should be pointed at container elements representing the display and st
     </ul>
     
 after processing, becomes:
+
     <ul class="fliperoo-display-list">
       <li class="fliperoo-display-container">
         <div class="fliperoo-display fliperoo-front">one</div>
