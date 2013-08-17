@@ -18,6 +18,9 @@
       $('.display').fliperoo($('.stockpile'), {randomize: false});
       
       $('.single').fliperoo({
+        perspective: '200px',
+        rotateStyle: 'X',
+        rotateDirection: '-',
         randomize: true, 
         displayCount: 5, 
         delay: 0, 
@@ -26,7 +29,12 @@
         easing: 'cubic-bezier(.06,.71,.34,.98)'
         });
         
-      $('#kittens').fliperoo();
+      $('#kittens').fliperoo({
+        displayOrder: 'forward',
+        delay: 0, 
+        flipFlop: true,
+        easing: 'linear'
+        });
       
     });
   </script>
