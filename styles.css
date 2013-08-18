@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-ul.stockpile {
-  display: none;
-}
-
-body {
-  font-size: 8em;
-  color: grey;
-  margin: 0;
-}
-
-ul {
-  margin: 0;
-=======
 body {
   margin: 0;
 }
@@ -24,14 +10,10 @@ ul {
   font-size: 8em;
   color: grey;
   margin: 0 0 .5em 0;
->>>>>>> gh-pages
   padding: 0;
   list-style: none;
 }
 
-<<<<<<< HEAD
-li {
-=======
 ul.stockpile {
   display: none;
 }
@@ -40,50 +22,11 @@ ul.display {
 }
 
 ul.display li {
->>>>>>> gh-pages
   display: block;
   float: left;
   width: 25%;
   min-width: 25%;
   text-align: center;
-<<<<<<< HEAD
-  margin: -1px;
-  border: 1px solid #CCC;
-  position: relative;
-  box-sizing: border-box;
-}
-
-/* Fliperoo styles */
-
-.fliperoo-display-container {
-  -webkit-transform-style: preserve-3d; /* Safari and Chrome */
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-.fliperoo-display {
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility:    hidden;
-  -ms-backface-visibility:     hidden;
-  backface-visibility: hidden;
-  top: 0;
-  left: 0;
-}
-
-.fliperoo-front {
-  z-index: 5;
-}
-
-.fliperoo-back {
-  z-index: 0;
-  -webkit-transform: rotateY(180deg);
-  -moz-transform: rotateY(180deg);
-  -ms-transform: rotateY(180deg);
-  transform: rotateY(180deg);
-  position: absolute;
-=======
   /*position: relative;
   box-sizing: border-box;*/
 }
@@ -115,5 +58,4 @@ ul#kittens li {
 ul#kittens li .fliperoo-display {
   height: 160px;
   overflow: hidden;
->>>>>>> gh-pages
 }
