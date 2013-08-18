@@ -4,6 +4,7 @@ body {
 
 h3 {
   margin: 1em 0 0 0;
+  clear: both;
 }
 
 ul {
