@@ -1,0 +1,33 @@
+/* Fliperoo styles */
+
+.fliperoo-display-container {
+  -webkit-transform-style: preserve-3d; /* Safari and Chrome */
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.fliperoo-display {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.fliperoo-front {
+  z-index: 2;
+  position: relative;
+}
+
+.fliperoo-back {
+  z-index: 0;
+  position: absolute;
+}
+
+.fliperoo-animating {
+  z-index: 100;
+}

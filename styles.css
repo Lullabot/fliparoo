@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ul.stockpile {
   display: none;
 }
@@ -10,16 +11,42 @@ body {
 
 ul {
   margin: 0;
+=======
+body {
+  margin: 0;
+}
+
+h3 {
+  margin: 1em 0 0 0;
+}
+
+ul {
+  font-size: 8em;
+  color: grey;
+  margin: 0 0 .5em 0;
+>>>>>>> gh-pages
   padding: 0;
   list-style: none;
 }
 
+<<<<<<< HEAD
 li {
+=======
+ul.stockpile {
+  display: none;
+}
+
+ul.display {
+}
+
+ul.display li {
+>>>>>>> gh-pages
   display: block;
   float: left;
   width: 25%;
   min-width: 25%;
   text-align: center;
+<<<<<<< HEAD
   margin: -1px;
   border: 1px solid #CCC;
   position: relative;
@@ -56,4 +83,37 @@ li {
   -ms-transform: rotateY(180deg);
   transform: rotateY(180deg);
   position: absolute;
+=======
+  /*position: relative;
+  box-sizing: border-box;*/
+}
+
+ul.display li .fliperoo-display {
+  background-color: #fff;
+  border: 1px solid #CCC;
+}
+
+ul.single li {
+  display: block;
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+ul.single li .fliperoo-display {
+  color: #fff;
+  background-color: #666;
+  border: 2px #CCC solid;
+  box-sizing: border-box;
+}
+
+ul#kittens li {
+  display: block;
+  float: left;
+}
+
+ul#kittens li .fliperoo-display {
+  height: 160px;
+  overflow: hidden;
+>>>>>>> gh-pages
 }
