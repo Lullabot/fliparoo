@@ -8,6 +8,7 @@ This is meant to be an alternative to a carousel - a little more ambient with le
 *Created by Jeff Robbins with [Lullabot](http://www.lullabot.com).*
 
 Use examples: 
+
     $('#mylist').fliperoo();
     $('#mylist').fliperoo({displayCount: 5});
     $('ul.display').fliperoo($('ul.stockpile'));
