@@ -15,11 +15,8 @@ ul {
   list-style: none;
 }
 
-ul.stockpile {
+.hidden {
   display: none;
-}
-
-ul.display {
 }
 
 ul.display li {
@@ -51,12 +48,27 @@ ul.single li .fliperoo-display {
   box-sizing: border-box;
 }
 
-ul#kittens li {
+ul#kittens li, ul#robots li {
   display: block;
   float: left;
 }
 
-ul#kittens li .fliperoo-display {
+
+
+ul#kittens li,
+ul#kittens li div.fliperoo-display, 
+ul#robots li,
+ul#robots li div.fliperoo-display {
   height: 160px;
   overflow: hidden;
+}
+
+/* 
+ * undo styling on the li elements
+ * once they have been processed
+ */
+ul#kittens.fliperoo-display-list li,
+ul#robots.fliperoo-display-list li {
+  height: auto;
+  overflow: visible;
 }
