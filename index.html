@@ -38,6 +38,13 @@
         rotateAxis: 'Y'
         });
       
+      $('#robots').fliperoo($('#robots-feed'), {
+        easing: 'cubic-bezier(.04,.53,.16,.99)',
+        transTime: 700,
+        delay: 50,
+        setDelay: 3000
+      });
+      
     });
   </script>
   
@@ -51,7 +58,7 @@
     <li>3</li>
     <li>4</li>
   </ul>
-  <ul class="stockpile">
+  <ul class="stockpile hidden">
     <li>5</li>
     <li>6</li>
     <li>7</li>
@@ -79,7 +86,7 @@
   </ul>
   
   
-  <h3 id="images">Images:</h3>
+  <h3>Kittens:</h3>
   <ul id="kittens">
     <li><a href="http://www.flickr.com/photos/merlijnhoek/2841785343/" title="Crazy Kitten? // Nikkor 50mm 1.4 by Merlijn Hoek, on Flickr"><img src="http://farm4.staticflickr.com/3033/2841785343_e166fb4396_m.jpg" width="240" height="161" alt="Crazy Kitten? // Nikkor 50mm 1.4"></a></li>
     <li><a href="http://www.flickr.com/photos/evapro/349535809/" title="Tony's Cat by eva101, on Flickr"><img src="http://farm1.staticflickr.com/127/349535809_df2deac900_m.jpg" width="240" height="194" alt="Tony's Cat"></a></li>
@@ -96,12 +103,15 @@
   </ul>
   
   
-  <h3>Single Display list:</h3>
+  <h3>Robots:</h3>
   <ul id="robots">
     <li><a href="http://www.flickr.com/photos/donsolo/314184695/" title="this is Roy... Roy the killbot by Ѕolo, on Flickr"><img src="http://farm1.staticflickr.com/108/314184695_ea6a1b6284_m.jpg" width="240" height="180" alt="this is Roy... Roy the killbot"></a></li>
     <li><a href="http://www.flickr.com/photos/pippyisatruck/19958964/" title="roby by pippy is a truck, on Flickr"><img src="http://farm1.staticflickr.com/15/19958964_62153b1069_m.jpg" width="240" height="180" alt="roby"></a></li>
     <li><a href="http://www.flickr.com/photos/elaws/3773702375/" title="Rusty C3PO by Roger Schultz, on Flickr"><img src="http://farm4.staticflickr.com/3494/3773702375_d8fe2104d0_m.jpg" width="240" height="159" alt="Rusty C3PO"></a></li>
     <li><a href="http://www.flickr.com/photos/jeckcrow/4407422983/" title="Sci-Fi Museum - Klaatu Barada Nikto, Bitches! by jeck_crow, on Flickr"><img src="http://farm5.staticflickr.com/4062/4407422983_0c52468976_m.jpg" width="240" height="160" alt="Sci-Fi Museum - Klaatu Barada Nikto, Bitches!"></a></li>
+  </ul>
+    
+  <ul id="robots-feed" class="hidden"> 
     <li><a href="http://www.flickr.com/photos/jdhancock/7801182534/" title="Robby the Robot: Into The Unknown! by JD Hancock, on Flickr"><img src="http://farm9.staticflickr.com/8431/7801182534_19a6c11c43_m.jpg" width="240" height="160" alt="Robby the Robot: Into The Unknown!"></a></li>
     <li><a href="http://www.flickr.com/photos/bbum/2535913784/" title="PIN-BOT: Backglass by bbum, on Flickr"><img src="http://farm3.staticflickr.com/2011/2535913784_8d8e59e6e3_m.jpg" width="240" height="160" alt="PIN-BOT: Backglass"></a></li>
     <li><a href="http://www.flickr.com/photos/steve-maw/4341966648/" title="Say &quot;Hello&quot; by Steve.M~, on Flickr"><img src="http://farm3.staticflickr.com/2734/4341966648_0df640d1ac_m.jpg" width="240" height="162" alt="Say &quot;Hello&quot;"></a></li>
