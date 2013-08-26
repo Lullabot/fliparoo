@@ -9,7 +9,7 @@ This script is intended to swap out items in a "display" list with those in a "s
 
 This is meant to be an alternative to a carousel - a little more ambient with less user interaction.
 
-It is probably understood by looking at the **[demo page](http://lullabot.github.io/fliperoo/)**.
+It is probably best understood by looking at the **[demo page](http://lullabot.github.io/fliperoo/)**.
 
 *Created by Jeff Robbins with [Lullabot](http://www.lullabot.com).*
 
