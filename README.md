@@ -1,13 +1,19 @@
 # Fliperoo Read Me File
 
 ## Overview
-This script is intended to swap out items in a display list with those in a stockpile list. The most obvious use is for a strip of images which swap out from a larger list.
+Fliperoo is a jQuery plugin which is like Vanna White for your web page.
+
+![A flipping alternative to carousels](wheel-of-fortune.jpg)
+
+This script is intended to swap out items in a "display" list with those in a "stockpile" list. The most obvious use is for a strip of images which swap out from a larger list.
 
 This is meant to be an alternative to a carousel - a little more ambient with less user interaction.
 
+It is probably best understood by looking at the **[demo page](http://lullabot.github.io/fliperoo/)**.
+
 *Created by Jeff Robbins with [Lullabot](http://www.lullabot.com).*
 
-Use examples: 
+## Use examples: 
 
     $('#mylist').fliperoo();
     $('#mylist').fliperoo({displayCount: 5});
