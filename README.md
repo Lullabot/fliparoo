@@ -5,7 +5,7 @@ Fliperoo is a jQuery plugin which is like Vanna White for your web page.
 
 ![A flipping alternative to carousels](wheel-of-fortune.jpg)
 
-This script is intended to swap out items in a "display" list with those in a "stockpile" list. The most obvious use is for a strip of images which swap out from a larger list.
+This script is intended to swap out items in a "display" list with those in a "queue" list. The most obvious use is for a strip of images which swap out from a larger list.
 
 This is meant to be an alternative to a carousel - a little more ambient with less user interaction.
 
@@ -15,10 +15,10 @@ It is probably best understood by looking at the **[demo page](http://lullabot.g
 
 ## Use examples: 
 
-    $('#mylist').fliperoo();
-    $('#mylist').fliperoo({displayCount: 5});
-    $('ul.display').fliperoo($('ul.stockpile'));
-    $('ul.display').fliperoo($('ul.stockpile'), {
+    $('#mylist li').fliperoo();
+    $('#mylist li').fliperoo({displayCount: 5});
+    $('ul.display li').fliperoo($('ul.queue li'));
+    $('ul.display li').fliperoo($('ul.queue li'), {
       delay: 1000,
       transTime: 1000, 
       randomize: true
@@ -53,7 +53,7 @@ See also:
 * Elements need to be the same height/width
 
 ## Usage Notes
-Fliperoo should be pointed at container elements representing the display and stockpile list. Most web developers will use a `<ul>` or `<ol>` list for this purpose. The children of these elements are used as the list items for display and stockpile. Since it is invalid to add elements between the `<ul>` and `<li>` items, Fliperoo creates a `<div>` element inside of each display `<li>` and effectively moves the content of the `<li>` into the `<div>`. Example:
+Fliperoo should be pointed at container elements representing the display and queue list. Most web developers will use a `<ul>` or `<ol>` list for this purpose. The children of these elements are used as the list items for display and queue. Since it is invalid to add elements between the `<ul>` and `<li>` items, Fliperoo creates a `<div>` element inside of each display `<li>` and effectively moves the content of the `<li>` into the `<div>`. Example:
 
     <ul>
       <li>one</li>
@@ -64,7 +64,7 @@ Fliperoo should be pointed at container elements representing the display and st
     
 after processing, becomes:
 
-    <ul class="fliperoo-display-list">
+    <ul>
       <li class="fliperoo-display-container">
         <div class="fliperoo-display fliperoo-front">one</div>
         <div class="fliperoo-display fliperoo-back">five</div>
@@ -90,11 +90,11 @@ The `<li>` "container" items are the items which use 3D transforms to flip. The 
 Also note that the display items need to be a type of html element which can accept sub-elements. Above, each `<li>` gets `<div>` elements inserted into it. For instance, a collection of `<img>` elements wouldn't work because you can't nest another element inside an image.
 
 ### Single vs. Double Lists
-Fliperoo works with either two lists or just one. In the case of two lists, one list is the "display" list and the other is the "stockpile". This allows the stockpile list to be hidden with CSS so if Javascript is disabled and Fliperoo doesn't do anything, only a few of the list items will be displayed. This also solves the FOUC (flash of unstyled content) problem which can happen briefly during the page load. 
+Fliperoo works with either two lists or just one. In the case of two lists, one list is the "display" list and the other is the "queue". This allows the queue list to be hidden with CSS so if Javascript is disabled and Fliperoo doesn't do anything, only a few of the list items will be displayed. This also solves the FOUC (flash of unstyled content) problem which can happen briefly during the page load. 
 
 It is also possible to use a single list and define the number of items to display using the `displayCount` parameter. Although this is an easier method for most web developers, keep in mind that if Javascript is disabled, all list items will be diplayed. Please allow for this in your CSS styling.
 
-Note that these 'lists' don't actually need to be `<li>` lists. You could also use nested `<div>`s or whatever html meets your needs.
+Note that these 'lists' don't actually need to be `<li>` lists. You could also use `<div>`s or whatever html meets your needs.
 
 ## Performance
 Fliperoo uses the Transit plugin, which applies CSS3 transition animations to the display elements. Most web browsers will engage hardware acceleration for CSS3 animations, making them much more efficient than Javascript-based or even Flash-based animations. However, these animations can still be processor intensive, especially when many different animations are happening simultaneously on the same page. Test in a variety of browsers on a variety of operating systems and processors before deploying. You've been warned.

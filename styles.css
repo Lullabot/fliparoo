@@ -67,8 +67,8 @@ ul#robots li div.fliperoo-display {
  * undo styling on the li elements
  * once they have been processed
  */
-ul#kittens.fliperoo-display-list li,
-ul#robots.fliperoo-display-list li {
+ul#kittens li.fliperoo-display-container,
+ul#robots li.fliperoo-display-container {
   height: auto;
   overflow: visible;
 }
