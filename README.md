@@ -13,7 +13,7 @@ It is probably best understood by looking at the **[demo page](http://lullabot.g
 
 *Created by Jeff Robbins with [Lullabot](http://www.lullabot.com).*
 
-## Use examples: 
+## Code examples: 
 
     $('#mylist li').fliperoo();
     $('#mylist li').fliperoo({displayCount: 5});
@@ -95,6 +95,58 @@ Fliperoo works with either two lists or just one. In the case of two lists, one 
 It is also possible to use a single list and define the number of items to display using the `displayCount` parameter. Although this is an easier method for most web developers, keep in mind that if Javascript is disabled, all list items will be diplayed. Please allow for this in your CSS styling.
 
 Note that these 'lists' don't actually need to be `<li>` lists. You could also use `<div>`s or whatever html meets your needs.
+
+## Options
+
+You can find these at the bottom of the `jquery.fliperoo.js` file:
+
+```javascript
+    delay: 2000,
+    // milliseconds between flips
+    
+    transTime: 1000,
+    // transition time of each flip in milliseconds
+    
+    easing: 'cubic-bezier(.44,-0.23,.51,1.44)',
+    // easing of flip animation
+    // options from http://ricostacruz.com/jquery.transit/
+    // I recommend http://cubic-bezier.com/
+    
+    setDelay: 0,
+    // delay between iterations through the display set
+    // This is an additional delay added after all items in display set have been flipped
+    
+    randomize: false,
+    // true = Randomize items to be displayed.
+    // false = Go through display and queue in order.
+    
+    displayCount: 4,
+    // when using a single list, how many items should be displayed?
+    // the remainder will be hidden
+    // 0 = all (hide none)
+    
+    displayOrder: 'random',
+    // options: 'random', 'forward', 'reverse'
+    // how should the repeating pattern of display order be chosen?
+    
+    perspective: '500px',
+    // Depth of perspective. Lower values give a more pronounced effect.
+    
+    rotateAxis: 'Y',
+    // options: 'X', 'Y', 'XY', 'XZ', 'YZ, or 'XYZ'
+    // rotate along X, Y, or all axes
+    // simple X or Y work best - others are buggy
+        
+    rotateDirection: '+',
+    // options: '+', or '-'
+    // rotate forward or back
+    
+    flipFlop: false,
+    // if true, rotationDirection will alternate with each flip
+    
+    transit: {},
+    // Additional Transit properties. See http://ricostacruz.com/jquery.transit/
+```
 
 ## Performance
 Fliperoo uses the Transit plugin, which applies CSS3 transition animations to the display elements. Most web browsers will engage hardware acceleration for CSS3 animations, making them much more efficient than Javascript-based or even Flash-based animations. However, these animations can still be processor intensive, especially when many different animations are happening simultaneously on the same page. Test in a variety of browsers on a variety of operating systems and processors before deploying. You've been warned.
