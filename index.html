@@ -14,9 +14,9 @@
   <script type="text/javascript" charset="utf-8">
     $().ready(function(){     
       
-      $('.display').fliperoo($('.stockpile'), {randomize: false});
+      $('.display li').fliperoo($('.stockpile li'), {randomize: false});
       
-      $('.single').fliperoo({
+      $('.single li').fliperoo({
         perspective: '200px',
         rotateAxis: 'X',
         rotateDirection: '-',
@@ -27,7 +27,7 @@
         easing: 'cubic-bezier(.72,.05,.91,.98)'
         });
         
-      $('#kittens').fliperoo({
+      $('#kittens li').fliperoo({
         displayOrder: 'forward',
         randomize: true,
         delay: 0, 
@@ -38,7 +38,7 @@
         rotateAxis: 'Y'
         });
       
-      $('#robots').fliperoo($('#robots-feed'), {
+      $('#robots li').fliperoo($('#robots-feed li'), {
         easing: 'cubic-bezier(.04,.53,.16,.99)',
         transTime: 700,
         delay: 50,
