@@ -15,10 +15,10 @@ It is probably best understood by looking at the **[demo page](http://lullabot.g
 
 ## Use examples: 
 
-    $('#mylist').fliperoo();
-    $('#mylist').fliperoo({displayCount: 5});
-    $('ul.display').fliperoo($('ul.stockpile'));
-    $('ul.display').fliperoo($('ul.stockpile'), {
+    $('#mylist li').fliperoo();
+    $('#mylist li').fliperoo({displayCount: 5});
+    $('ul.display li').fliperoo($('ul.stockpile li'));
+    $('ul.display li').fliperoo($('ul.stockpile li'), {
       delay: 1000,
       transTime: 1000, 
       randomize: true
@@ -64,7 +64,7 @@ Fliperoo should be pointed at container elements representing the display and st
     
 after processing, becomes:
 
-    <ul class="fliperoo-display-list">
+    <ul>
       <li class="fliperoo-display-container">
         <div class="fliperoo-display fliperoo-front">one</div>
         <div class="fliperoo-display fliperoo-back">five</div>
@@ -94,7 +94,7 @@ Fliperoo works with either two lists or just one. In the case of two lists, one 
 
 It is also possible to use a single list and define the number of items to display using the `displayCount` parameter. Although this is an easier method for most web developers, keep in mind that if Javascript is disabled, all list items will be diplayed. Please allow for this in your CSS styling.
 
-Note that these 'lists' don't actually need to be `<li>` lists. You could also use nested `<div>`s or whatever html meets your needs.
+Note that these 'lists' don't actually need to be `<li>` lists. You could also use `<div>`s or whatever html meets your needs.
 
 ## Performance
 Fliperoo uses the Transit plugin, which applies CSS3 transition animations to the display elements. Most web browsers will engage hardware acceleration for CSS3 animations, making them much more efficient than Javascript-based or even Flash-based animations. However, these animations can still be processor intensive, especially when many different animations are happening simultaneously on the same page. Test in a variety of browsers on a variety of operating systems and processors before deploying. You've been warned.
