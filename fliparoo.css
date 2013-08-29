@@ -1,12 +1,12 @@
-/* Fliperoo styles */
+/* Fliparoo styles */
 
-.fliperoo-display-container {
+.fliparoo-display-container {
   -webkit-transform-style: preserve-3d; /* Safari and Chrome */
   transform-style: preserve-3d;
   position: relative;
 }
 
-.fliperoo-display {
+.fliparoo-display {
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
@@ -18,16 +18,16 @@
   box-sizing: border-box;
 }
 
-.fliperoo-front {
+.fliparoo-front {
   z-index: 2;
   position: relative;
 }
 
-.fliperoo-back {
+.fliparoo-back {
   z-index: 0;
   position: absolute;
 }
 
-.fliperoo-animating {
+.fliparoo-animating {
   z-index: 100;
 }

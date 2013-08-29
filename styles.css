@@ -29,7 +29,7 @@ ul.display li {
   box-sizing: border-box;*/
 }
 
-ul.display li .fliperoo-display {
+ul.display li .fliparoo-display {
   background-color: #fff;
   border: 1px solid #CCC;
 }
@@ -41,7 +41,7 @@ ul.single li {
   text-align: center;
 }
 
-ul.single li .fliperoo-display {
+ul.single li .fliparoo-display {
   color: #fff;
   background-color: #666;
   border: 2px #CCC solid;
@@ -56,9 +56,9 @@ ul#kittens li, ul#robots li {
 
 
 ul#kittens li,
-ul#kittens li div.fliperoo-display, 
+ul#kittens li div.fliparoo-display, 
 ul#robots li,
-ul#robots li div.fliperoo-display {
+ul#robots li div.fliparoo-display {
   height: 160px;
   overflow: hidden;
 }
@@ -67,8 +67,8 @@ ul#robots li div.fliperoo-display {
  * undo styling on the li elements
  * once they have been processed
  */
-ul#kittens li.fliperoo-display-container,
-ul#robots li.fliperoo-display-container {
+ul#kittens li.fliparoo-display-container,
+ul#robots li.fliparoo-display-container {
   height: auto;
   overflow: visible;
 }
