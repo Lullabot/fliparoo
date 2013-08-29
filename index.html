@@ -2,21 +2,21 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Fliperoo!</title>
+  <title>Fliparoo!</title>
   
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="fliperoo.css">
+  <link rel="stylesheet" href="fliparoo.css">
   
   <script src="jquery-2.0.3.min.js"></script>
   <script src="jquery.transit.min.js" type="text/javascript" charset="utf-8"></script>
-  <script src="jquery.fliperoo.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jquery.fliparoo.js" type="text/javascript" charset="utf-8"></script>
   
   <script type="text/javascript" charset="utf-8">
     $().ready(function(){     
       
-      $('.display li').fliperoo($('.queue li'), {randomize: false});
+      $('.display li').fliparoo($('.queue li'), {randomize: false});
       
-      $('.single li').fliperoo({
+      $('.single li').fliparoo({
         perspective: '200px',
         rotateAxis: 'X',
         rotateDirection: '-',
@@ -27,7 +27,7 @@
         easing: 'cubic-bezier(.72,.05,.91,.98)'
         });
         
-      $('#kittens li').fliperoo({
+      $('#kittens li').fliparoo({
         displayOrder: 'forward',
         randomize: true,
         delay: 0, 
@@ -38,7 +38,7 @@
         rotateAxis: 'Y'
         });
       
-      $('#robots li').fliperoo($('#robots-feed li'), {
+      $('#robots li').fliparoo($('#robots-feed li'), {
         easing: 'cubic-bezier(.04,.53,.16,.99)',
         transTime: 700,
         delay: 50,
