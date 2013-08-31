@@ -46,6 +46,10 @@
         setDelay: 3000
       });
       
+      $('#table-test td:not(.no-swap)').fliparoo($('#table-feed li'), {
+        pauseOnHover: true
+      });
+      
     });
   </script>
   
@@ -123,39 +127,39 @@
     <li><a href="http://www.flickr.com/photos/jgelens/176969979/" title="Toyota robot by Jeffrey &amp; Mami, on Flickr"><img src="http://farm1.staticflickr.com/75/176969979_77c574dee8_m.jpg" width="240" height="180" alt="Toyota robot"></a></li>
   </ul>
   
-  
   <h3>Table</h3>
-  <table border="0" cellspacing="5" cellpadding="5">
-    <tr><th>Header</th></tr>
+  <table id="table-test" width="228" height="160">
     <tr>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
     </tr>
     <tr>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
+      <td>6</td>
+      <td class="no-swap" colspan="3">unchanging</td>
+      <td>7</td>
     </tr>
     <tr>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
-    </tr>
-    <tr>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
-      <td>Display</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
     </tr>
   </table>
+  
+  <ul id="table-feed" class="hidden">
+    <li>13</li>
+    <li>14</li>
+    <li>15</li>
+    <li>16</li>
+    <li>17</li>
+    <li>18</li>
+    <li>19</li>
+    <li>20</li>
+  </ul>
   
 </body>
 </html>
