@@ -72,3 +72,22 @@ ul#robots li.fliparoo-display-container {
   height: auto;
   overflow: visible;
 }
+
+#table-test {
+  font-size: 4em;
+}
+
+#table-test td, 
+#table-test td div {
+  width: 2em;
+  height: 1.2em;
+  text-align: center;
+}
+
+#table-test .fliparoo-front {
+  background-color: #ffd7d7;
+}
+
+#table-test .fliparoo-back {
+  background-color: #d7dbff;
+}
