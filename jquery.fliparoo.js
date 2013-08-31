@@ -178,6 +178,7 @@
     
     var resume = function(){
       console.log('resuming');
+      // @TODO - prevent user interaction from overtriggering
       doNext();
     };
     
