@@ -10,13 +10,18 @@ h3 {
 ul {
   font-size: 8em;
   color: grey;
-  margin: 0 0 .5em 0;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .hidden {
   display: none;
+}
+
+.example pre {
+  white-space: pre-wrap;
+  clear: both;
 }
 
 ul.display li {
@@ -53,8 +58,6 @@ ul#kittens li, ul#robots li {
   float: left;
 }
 
-
-
 ul#kittens li,
 ul#kittens li div.fliparoo-display, 
 ul#robots li,
@@ -75,19 +78,26 @@ ul#robots li.fliparoo-display-container {
 
 #table-test {
   font-size: 4em;
+  width: 75%;
+}
+
+#table-test td {
+  width: 20%;
+  /* box-shadow: 1px 1px 3px black */
 }
 
 #table-test td, 
 #table-test td div {
-  width: 2em;
   height: 1.2em;
   text-align: center;
 }
 
 #table-test .fliparoo-front {
   background-color: #ffd7d7;
+  box-shadow: 1px 1px 5px black;
 }
 
 #table-test .fliparoo-back {
   background-color: #d7dbff;
+  box-shadow: 1px 1px 5px black;
 }
