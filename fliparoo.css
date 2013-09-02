@@ -31,3 +31,10 @@
 .fliparoo-animating {
   z-index: 100;
 }
+
+/*
+ * Convenience style to hide queue
+ */
+.fliparoo-queue {
+  display: none;
+}

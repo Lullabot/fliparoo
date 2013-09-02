@@ -116,8 +116,8 @@
       $('<div class="fliparoo-display fliparoo-back"></div>').appendTo(this).css(rotation);
     });
     
-    var doNext = function() {
-      // clear any existing timer (if doNext() was called early somehow)
+    var advance = function() {
+      // clear any existing timer (if advance() was called early somehow)
       clearTimeout(timer);
       
       // replace the display item with the queue item
@@ -161,7 +161,7 @@
         // when all the animations are done...
         $(this).removeClass('fliparoo-animating');
         // set the timer for the next one
-        timer = setTimeout(doNext, delay);
+        timer = setTimeout(advance, delay);
       };
       
       var animationFunc = opts.animationFunc;
@@ -179,13 +179,13 @@
     var resume = function(){
       console.log('resuming');
       // @TODO - prevent user interaction from overtriggering
-      doNext();
+      advance();
     };
     
-    $(this).each(function(){
-      $(this).data('fliparoo.next', doNext);
-      $(this).data('fliparoo.pause', pause);
-      $(this).data('fliparoo.resume', resume);
+    $(this).data('fliparoo', {
+      advance: advance,
+      pause: pause,
+      resume: resume
     });
     
     // pauseOnHover handling
@@ -195,24 +195,24 @@
       $(ancestor).hover(pause, resume);
     }
     
-    var timer = setTimeout(doNext, opts.delay + opts.setDelay);      
+    var timer = setTimeout(advance, opts.delay + opts.setDelay);      
     
     return this;
   };
   
   
-  $.fn.fliparooNext = function(){
-    $(this).data('fliparoo.next').call();
+  $.fn.fliparooAdvance = function(){
+    $(this).data('fliparoo').advance();
     return this;
   };
   
   $.fn.fliparooPause = function(){
-    $(this).data('fliparoo.pause').call();
+    $(this).data('fliparoo').pause();
     return this;
   };
   
   $.fn.fliparooResume = function(){
-    $(this).data('fliparoo.resume').call();
+    $(this).data('fliparoo').resume();
     return this;
   };
   
@@ -315,7 +315,7 @@
     //   transTime: transition time for animation
     //   Easing: easing parameters for animation
     //   postAnimation*: a function to execute when animation is finished
-    //     * = Required - call this at end of your function. Hint: postAnimation.call();
+    //     * = Required - call this at end of your function. Hint: postAnimation();
     
     // beta --------------------
     
