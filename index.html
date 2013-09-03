@@ -22,7 +22,7 @@
 <body>
 
   <h3 id="double">Display & Queue list:</h3>
-  <p>The best practice for Fliparoo is to use two sets of elements. One is a "display" set which acts as a container for the elements being shown. The other is a "queue" set which acts as a stockpile. By hiding the queue list with CSS, there will not be a FOUC (flash of unstyled content) between the time that the page begins to render and the time that the Fliparoo script runs. Perhaps more important is that if Javascript doesn't run on the page, the queue list elements will remain hidden and the fallback will be the original non-animating display elements.</p>
+  <p>The best practice for Fliparoo is to use two sets of elements. One is a "display" set (such as a &lt;li&gt; list) which acts as a container for the elements being shown. The other is a "queue" set which acts as a stockpile. By hiding the queue list with CSS, there will not be a FOUC (flash of unstyled content) between the time that the page begins to render and the time that the Fliparoo script runs. Perhaps more important is that if Javascript doesn't run on the page, the queue list elements will remain hidden and the fallback will be the original non-animating display elements.</p>
   <p>The jQuery selectors for the display and queue lists should reference the individual items within the set – the &lt;li&gt; items rather than the &lt;ul&gt; for example. In more advanced examples, this will allow us to non-contiguous display or queue items.</p>
   <div class="example">
     <ul class="display">
@@ -47,7 +47,7 @@
     
   </div>
   
-  <h3 id="single">Single Display list:</h3>
+  <h3 id="single">Single Combined Display/Queue list:</h3>
   <p>Fliparoo can also function with a single set of elements. This is obviously a simpler way to go, however In this case, you'll want to define a 'displayCount' property so that Fliperoo knows how many of the items to use for display and how many items to hide and put into the queue. This example also shows several other Fliperoo options including X-axis rotation, randomization of the queue, and custom easing.</p>
   <div class="example">
     <ul class="single">
@@ -66,7 +66,7 @@
     </ul>
     
     <script type="text/javascript">$('.single li').fliparoo({ // omit queue selector for single-list
-  displayCount: 5,      // when using a single list, tell Fliparoo how many items to use as display
+  displayCount: 5,      // for a combined set, number of items to use as display
   perspective: '200px', // exaggerate perspective slightly
   rotateAxis: 'X',      // spin on X axis
   rotateDirection: '-', // spin in negative direction
