@@ -1,6 +1,11 @@
 # Fliparoo Read Me File
 
+## Warning
+
+**THIS IS STILL ALPHA AND BROKEN. A RELEASE VERSION WILL BE COMING SOON. BUT DO NOT USE UNTIL THEN.**
+
 ## Overview
+
 Fliparoo is a jQuery plugin which is like Vanna White for your web page.
 
 ![A flipping alternative to carousels](wheel-of-fortune.jpg)
@@ -155,5 +160,5 @@ Fliparoo uses the Transit plugin, which applies CSS3 transition animations to th
 Older browsers without support for 3D transformations will simply get no animations. 
 
 ## Legal Stuff
-Fliparoo is copyright ©2013 by [Lullabot](http://www.lullabot.com) and licensed under the [MIT License](http://opensource.org/licenses/MIT) without waranty or guarantees of any kind.
+Fliparoo is copyright ï¿½2013 by [Lullabot](http://www.lullabot.com) and licensed under the [MIT License](http://opensource.org/licenses/MIT) without waranty or guarantees of any kind.
 
