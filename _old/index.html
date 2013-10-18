@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Fliparoo!</title>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="fliparoo.css">
+  
+  <script src="jquery-2.0.3.min.js"></script>
+  <script src="jquery.transit.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="jquery.fliparoo.js" type="text/javascript" charset="utf-8"></script>
+  
+  <script src="demo/syntaxhighlighter_3.0.83/scripts/shCore.js" type="text/javascript"></script>
+  <script src="demo/syntaxhighlighter_3.0.83/scripts/shBrushJScript.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="demo/syntaxhighlighter_3.0.83/styles/shCore.css">
+  <link rel="stylesheet" href="demo/syntaxhighlighter_3.0.83/styles/shThemeDefault.css">
+  
+  <script src="demo/demo.js" type="text/javascript" charset="utf-8"></script>
+  
+</head>
+<body>
+
+  <h3 id="double">Display & Queue list:</h3>
+  <p>The best practice for Fliparoo is to use two sets of elements. One is a "display" set (such as a &lt;li&gt; list) which acts as a container for the elements being shown. The other is a "queue" set which acts as a stockpile. By hiding the queue list with CSS, there will not be a FOUC (flash of unstyled content) between the time that the page begins to render and the time that the Fliparoo script runs. Perhaps more important is that if Javascript doesn't run on the page, the queue list elements will remain hidden and the fallback will be the original non-animating display elements.</p>
+  <p>The jQuery selectors for the display and queue lists should reference the individual items within the set – the &lt;li&gt; items rather than the &lt;ul&gt; for example. In more advanced examples, this will allow us to non-contiguous display or queue items.</p>
+  <div class="example">
+    <ul class="display">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <ul class="queue hidden">
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+    </ul>
+    
+    <script type="text/javascript">$('.display li').fliparoo($('.queue li')); // plain vanilla
+    </script>
+    
+  </div>
+  
+  <h3 id="single">Single Combined Display/Queue list:</h3>
+  <p>Fliparoo can also function with a single set of elements. This is obviously a simpler way to go, however In this case, you'll want to define a 'displayCount' property so that Fliperoo knows how many of the items to use for display and how many items to hide and put into the queue. This example also shows several other Fliperoo options including X-axis rotation, randomization of the queue, and custom easing.</p>
+  <div class="example">
+    <ul class="single">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+    </ul>
+    
+    <script type="text/javascript">$('.single li').fliparoo({ // omit queue selector for single-list
+  displayCount: 5,      // for a combined set, number of items to use as display
+  perspective: '200px', // exaggerate perspective slightly
+  rotateAxis: 'X',      // spin on X axis
+  rotateDirection: '-', // spin in negative direction
+  randomize: true,      // randomize the queue
+  delay: 0,             // no delay between flips
+  transTime: 2000,      // flips will take 2000 milliseconds (aka 2 seconds)
+  easing: 'cubic-bezier(.72,.05,.91,.98)' // from http://cubic-bezier.com/
+  });</script>
+  </div>
+  
+  <h3>Kittens:</h3>
+  <p>Usually, Fliparoo chooses a random display order which it repeats to display items in the queue. It is also possible to choose 'displayOrder: forward' or 'displayOrder: reverse' to iterate through the display set. By combining this with the 'setDelay' parameter, you can get a train-station-display type transition with a flutter of activity as all display items change and then pausing for visitors to parse the new information. This example uses the 'flipFlop' parameter to create a Jacob's Ladder effect without any delay between flips.</p>
+  <p>This example uses clickable linked images as the queue items.</p>
+  <div class="example">
+    <ul id="kittens">
+      <li><a href="http://www.flickr.com/photos/merlijnhoek/2841785343/" title="Crazy Kitten? // Nikkor 50mm 1.4 by Merlijn Hoek, on Flickr"><img src="http://farm4.staticflickr.com/3033/2841785343_e166fb4396_m.jpg" width="240" height="161" alt="Crazy Kitten? // Nikkor 50mm 1.4"></a></li>
+      <li><a href="http://www.flickr.com/photos/evapro/349535809/" title="Tony's Cat by eva101, on Flickr"><img src="http://farm1.staticflickr.com/127/349535809_df2deac900_m.jpg" width="240" height="194" alt="Tony's Cat"></a></li>
+      <li><a href="http://www.flickr.com/photos/tambako/6149819691/" title="Kitty on the floor by Tambako the Jaguar, on Flickr"><img src="http://farm7.staticflickr.com/6195/6149819691_8ba810a92b_m.jpg" width="240" height="158" alt="Kitty on the floor"></a></li>
+      <li><a href="http://www.flickr.com/photos/uomoelettrico/2154843552/" title="Feel good! by uomoelettrico, on Flickr"><img src="http://farm3.staticflickr.com/2013/2154843552_59a2c048bf_m.jpg" width="240" height="180" alt="Feel good!"></a></li>
+      <li><a href="http://www.flickr.com/photos/artisticrichmond/2716147621/" title="He's Sneaky [EXPLORE] by Henry Stern, on Flickr"><img src="http://farm4.staticflickr.com/3106/2716147621_3747e52b82_m.jpg" width="240" height="160" alt="He's Sneaky [EXPLORE]"></a></li>
+      <li><a href="http://www.flickr.com/photos/enrique_mendez/5820595170/" title="blue eyes by MendezEnrique, on Flickr"><img src="http://farm4.staticflickr.com/3529/5820595170_a82dbd2631_m.jpg" width="240" height="160" alt="blue eyes"></a></li>
+      <li><a href="http://www.flickr.com/photos/tommyhj/146236125/" title="Nap time by Tommy Hemmert Olesen, on Flickr"><img src="http://farm1.staticflickr.com/56/146236125_1d40f16384_m.jpg" width="240" height="160" alt="Nap time"></a></li>
+      <li><a href="http://www.flickr.com/photos/snowriderguy/37343192/" title="BETWEEN THE RAILINGS by boston_camera, on Flickr"><img src="http://farm1.staticflickr.com/27/37343192_b149f839f9_m.jpg" width="240" height="180" alt="BETWEEN THE RAILINGS"></a></li>
+      <li><a href="http://www.flickr.com/photos/haynephotography/3329804837/" title="kairos ~ 64 by Angélique ~, on Flickr"><img src="http://farm4.staticflickr.com/3004/3329804837_ac09c94ed0_m.jpg" width="240" height="160" alt="kairos ~ 64"></a></li>
+      <li><a href="http://www.flickr.com/photos/sicoactiva/93396555/" title="me pareció ver un lindo gatito! by RubioBuitrago, on Flickr"><img src="http://farm1.staticflickr.com/28/93396555_f197042b50_m.jpg" width="240" height="160" alt="me pareció ver un lindo gatito!"></a></li>
+      <li><a href="http://www.flickr.com/photos/merlijnhoek/2791728529/" title="Shetti sleeping by Merlijn Hoek, on Flickr"><img src="http://farm4.staticflickr.com/3194/2791728529_423fa9aeb6_m.jpg" width="240" height="161" alt="Shetti sleeping"></a></li>
+      <li><a href="http://www.flickr.com/photos/chungholeung/8738541536/" title="Innocence by Chung Ho Leung, on Flickr"><img src="http://farm8.staticflickr.com/7283/8738541536_8a534bcb94_m.jpg" width="240" height="160" alt="Innocence"></a></li>
+    </ul>
+    
+     <script type="text/javascript">$('#kittens li').fliparoo({
+  displayOrder: 'forward', // display order is left to right
+  randomize: true,         // randomize the queue
+  delay: 0,                // no delay between flips
+  transTime: 500,          // half-second flips
+  setDelay: 4000,          // pause for 4 seconds at the end of the display set
+  flipFlop: true,          // a jacobs ladder style flip-flop alternating direction each time
+  easing: 'linear',        // simple linear easing
+  rotateAxis: 'Y',         // rotate on Y axis (default)
+  pauseOnHover: true       // pause when hovering over display parent - &lt;ul&gt; in this case
+  });</script>
+  
+  </div>
+  
+  <h3>Robots:</h3>
+  <p>Robots! A similar example to above, but using two lists instead of one.</p>
+  <div class="example">
+    <ul id="robots">
+      <li><a href="http://www.flickr.com/photos/donsolo/314184695/" title="this is Roy... Roy the killbot by Ѕolo, on Flickr"><img src="http://farm1.staticflickr.com/108/314184695_ea6a1b6284_m.jpg" width="240" height="180" alt="this is Roy... Roy the killbot"></a></li>
+      <li><a href="http://www.flickr.com/photos/pippyisatruck/19958964/" title="roby by pippy is a truck, on Flickr"><img src="http://farm1.staticflickr.com/15/19958964_62153b1069_m.jpg" width="240" height="180" alt="roby"></a></li>
+      <li><a href="http://www.flickr.com/photos/elaws/3773702375/" title="Rusty C3PO by Roger Schultz, on Flickr"><img src="http://farm4.staticflickr.com/3494/3773702375_d8fe2104d0_m.jpg" width="240" height="159" alt="Rusty C3PO"></a></li>
+      <li><a href="http://www.flickr.com/photos/jeckcrow/4407422983/" title="Sci-Fi Museum - Klaatu Barada Nikto, Bitches! by jeck_crow, on Flickr"><img src="http://farm5.staticflickr.com/4062/4407422983_0c52468976_m.jpg" width="240" height="160" alt="Sci-Fi Museum - Klaatu Barada Nikto, Bitches!"></a></li>
+    </ul>
+      
+    <ul id="robots-feed" class="hidden"> 
+      <li><a href="http://www.flickr.com/photos/jdhancock/7801182534/" title="Robby the Robot: Into The Unknown! by JD Hancock, on Flickr"><img src="http://farm9.staticflickr.com/8431/7801182534_19a6c11c43_m.jpg" width="240" height="160" alt="Robby the Robot: Into The Unknown!"></a></li>
+      <li><a href="http://www.flickr.com/photos/bbum/2535913784/" title="PIN-BOT: Backglass by bbum, on Flickr"><img src="http://farm3.staticflickr.com/2011/2535913784_8d8e59e6e3_m.jpg" width="240" height="160" alt="PIN-BOT: Backglass"></a></li>
+      <li><a href="http://www.flickr.com/photos/steve-maw/4341966648/" title="Say &quot;Hello&quot; by Steve.M~, on Flickr"><img src="http://farm3.staticflickr.com/2734/4341966648_0df640d1ac_m.jpg" width="240" height="162" alt="Say &quot;Hello&quot;"></a></li>
+      <li><a href="http://www.flickr.com/photos/by_andy/682910353/" title="robot by AndyWilson, on Flickr"><img src="http://farm2.staticflickr.com/1416/682910353_a84d6ad0d0_m.jpg" width="240" height="161" alt="robot"></a></li>
+      <li><a href="http://www.flickr.com/photos/freckle_m/303067487/" title="AIBO by Martina Gobec, on Flickr"><img src="http://farm1.staticflickr.com/107/303067487_d1eed4ae70_m.jpg" width="240" height="180" alt="AIBO"></a></li>
+      <li><a href="http://www.flickr.com/photos/stevensnodgrass/4716150464/" title="C-3PO Inspiration by Steve Snodgrass, on Flickr"><img src="http://farm5.staticflickr.com/4070/4716150464_ecc4b0fa7a_m.jpg" width="240" height="160" alt="C-3PO Inspiration"></a></li>
+      <li><a href="http://www.flickr.com/photos/tonyboytran/5035180361/" title="&quot;...while you're away.&quot;   [EXPLORE] by tonyboytran, on Flickr"><img src="http://farm5.staticflickr.com/4104/5035180361_915f33cd39_m.jpg" width="240" height="160" alt="&quot;...while you're away.&quot;   [EXPLORE]"></a></li>
+      <li><a href="http://www.flickr.com/photos/jgelens/176969979/" title="Toyota robot by Jeffrey &amp; Mami, on Flickr"><img src="http://farm1.staticflickr.com/75/176969979_77c574dee8_m.jpg" width="240" height="180" alt="Toyota robot"></a></li>
+    </ul>
+  
+    <script type="text/javascript">$('#robots li').fliparoo($('#robots-feed li'), {
+  easing: 'cubic-bezier(.04,.53,.16,.99)',
+  transTime: 700,
+  delay: 50,
+  setDelay: 3000
+  });</script>
+  </div>
+  
+  <h3>Table</h3>
+  
+  <p>This example uses a &lt;table&gt; (gasp!) to target non-contiguous display elements. Here, the display set is all the table's &lt;td&gt; elements which do not have the class "no-swap". The queue is plain old &lt;ul&gt; list.</p>
+   
+  <div class="example">
+    <table id="table-test" width="228" height="160">
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td class="no-swap" colspan="3">unchanging</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+    </table>
+    
+    <ul id="table-feed" class="hidden">
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+      <li>16</li>
+      <li>17</li>
+      <li>18</li>
+      <li>19</li>
+      <li>20</li>
+    </ul>
+    
+    <script type="text/javascript">$('#table-test td:not(.no-swap)').fliparoo($('#table-feed li'), {
+  pauseOnHover: true
+});</script>
+  </div>
+  
+</body>
+</html>
