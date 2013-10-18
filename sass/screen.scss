@@ -81,7 +81,18 @@ textarea {
 
 /******** DESIGN *********/
 /* styles for overall design */
+.orange {
+	color: $color-orange;
+}
 
+.white {
+	color: #fff;
+}
+
+.strong {
+	font-family: $sans-serif-bold;
+	font-weight: normal;
+}
 
 /******* /DESIGN *********/
 
@@ -91,7 +102,48 @@ textarea {
 /******** MODULE *********/
 /* styles for modular content sections, including alternate states */
 
-/* Fliparoo styles */
+/*****  SECTION-ONE Styles *****/
+.section-one {
+	background-color: transparent;
+}
+
+/***** /SECTION-ONE Styles *****/
+
+/*****  SECTION-TWO Styles *****/
+.section-two {
+	background-color: $color-turquoise-darker;
+	color: #fff;
+	h2 {
+		color: #fff;
+	}
+}
+
+/***** /SECTION-TWO Styles *****/
+
+/*****  SECTION-THREE Styles *****/
+.section-three {
+	background-color: transparent;
+}
+
+/***** /SECTION-THREE Styles *****/
+
+/*****  SECTION-FOUR Styles *****/
+.section-four {
+	background-color: $color-gray-med;
+}
+
+/***** /SECTION-FOUR Styles *****/
+
+/*****  FOOTER Styles *****/
+body > footer {
+	background-color: $color-orange; 
+	h2 {
+		color: #fff;
+	}
+}
+
+/***** /FOOTER Styles *****/
+
 /* Fliparoo styles */
 
 .fliparoo-display-container {

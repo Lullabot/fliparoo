@@ -18,23 +18,48 @@ body, caption, th, td, input, textarea, select, option, legend, fieldset {
     //font-weight: 100;
 }
 
+strong, 
+b {
+	font-family: $sans-serif-bold; 
+	font-weight: normal;
+}
+
+em, 
+i {
+	font-family: $sans-serif-italic; 
+	font-style: normal;
+}
+
+strong em, 
+em strong, 
+b i, 
+i b {
+	font-family: $sans-serif-bold-italic; 
+	font-weight: normal; 
+	font-style: normal;
+}
+
+
+
 h1 {
     margin: 0.67em 0 0 0;
     font-family: $font-h1; 
-    font-weight: 200;
+    font-weight: normal;
     color: $color-h1;
     font-size: $h1-font-size; 
     line-height: 1.15em;
+    text-align: center;
 }
 
 h2 {
     font-family: $font-h2; 
-    font-weight: 200; 
+    font-weight: normal; 
     font-style: normal;
     color: $color-h2;
     font-size: $h2-font-size; 
     line-height: 1.15em;
     margin-bottom: .5em;
+    text-align: center;
 }
 
 h3 {
@@ -45,7 +70,8 @@ h3 {
     font-size: $h3-font-size;
     line-height: 1.15em;
     margin-bottom: .5em;
-    margin-top: 0;
+    margin-top: 0; 
+    text-align: center;
 }
 
 h4 {
@@ -77,8 +103,14 @@ h6 {
 }
 
 p {
-	margin-top: 0;
-}
+	margin-top: 0; 
+	font-size: (20 / $base-font-size) * 1em;
+	-moz-font-feature-settings:"liga" 1, "dlig" 1, "hlig" 1, "clig" 1; 
+	-moz-font-feature-settings:"liga=1, dlig=1, hlig=1, clig=1"; 
+	-ms-font-feature-settings:"liga" 1, "dlig" 1, "hlig" 1, "clig" 1; 
+	-o-font-feature-settings:"liga" 1, "dlig" 1, "hlig" 1, "clig" 1; 
+	-webkit-font-feature-settings:"liga" 1, "dlig" 1, "hlig" 1, "clig" 1; 
+	font-feature-settings:"liga" 1, "dlig" 1, "hlig" 1, "clig" 1;}
 
 a {
 	@include transition(color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom 0.2s ease-in-out);	

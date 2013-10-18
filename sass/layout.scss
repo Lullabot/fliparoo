@@ -8,7 +8,7 @@
 $zen-column-count: 6;
 $zen-gutter-width: 1.5em;
 
-.page {
+.content {
 	@include zen-grid-container; 
 	max-width: 100%; 
 	margin: 0 auto;
@@ -67,7 +67,7 @@ header {
 	$zen-column-count: 8;
 	$zen-gutter-width: 1.5em;
 
-	.page {
+	.content {
 		width: 98%;
 		max-width: 98%; 
 	}
@@ -122,7 +122,7 @@ header {
 	$zen-column-count: 10;
 	$zen-gutter-width: 3em;
 
-	.page {
+	.content {
 		width: 94%;
 		max-width: 94%; 
 	}
@@ -211,7 +211,7 @@ header {
 	$zen-column-count: 12;
 	$zen-gutter-width: 3em;
 
-	.page {
+	.content {
 		width: 90%;
 		max-width: 64em; 
 	}

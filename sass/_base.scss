@@ -64,20 +64,23 @@ $h6-font-size: 0.75 * 1em;
 // find any of the fonts in the list.
 
 /*
-Google Font samples
-font-family: 'Open Sans Condensed', sans-serif;
-font-family: 'Open Sans', sans-serif;
-font-family: 'Roboto Slab', serif;
+Font samples
+font-family:'Proxima Nova W08 Reg';
+font-family:'Proxima Nova W08 Reg It';
+font-family:'Proxima Nova W08 Bd';
+font-family:'Proxima Nova W08 Bd It';
 */
 
 // First, let's create some font stacks.
 $serif-fallback: Georgia, "Times New Roman", Times, serif;
 $sans-serif-fallback: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
-$serif:     'Roboto Slab', $serif-fallback;
+$serif:     $serif-fallback;
 
-$sans-serif: 'Open Sans', $sans-serif-fallback;
-$sans-serif-condensed: 'Open Sans Condensed', $sans-serif-fallback;
+$sans-serif: 'Proxima Nova W08 Reg', $sans-serif-fallback;
+$sans-serif-bold: 'Proxima Nova W08 Bd', $sans-serif-fallback;
+$sans-serif-italic: 'Proxima Nova W08 Reg It', $sans-serif-fallback;
+$sans-serif-bold-italic: 'Proxima Nova W08 Bd It', $sans-serif-fallback;
 
 // For an explanation of why "sans-serif" is at the end of this list, see
 // http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
@@ -86,28 +89,32 @@ $fixed:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
 // Now create some variables for the font stacks we want to use on this site.
 $base-font-family: $sans-serif; // The font family set on the html element.
 $font-body:        $sans-serif;
-$font-headings:    $serif;
+$font-headings:    $sans-serif-bold;
 $font-monospace:   $fixed;
 
-$font-h1: $serif;
-$font-h2: $serif;
-$font-h3: $serif;
-$font-h4: $serif;
-$font-h5: $serif;
-$font-h6: $serif;
+$font-h1: $sans-serif;
+$font-h2: $sans-serif-bold;
+$font-h3: $sans-serif;
+$font-h4: $sans-serif-bold;
+$font-h5: $sans-serif-bold;
+$font-h6: $sans-serif-bold;
 
 //
 // Colors, etc.
 //
 
+$color-green: #94d574;
+$color-orange: #ff8454;
+$color-orange-darker: #ea6b48;
+$color-turquoise: #3dc5ae;
+$color-turquoise-darker: #00a79e;
+$color-gray: #656565;
+$color-gray-med: #eaeaea;
+$color-gray-lt: #f5f4f4;
+
 $color-blue: #667b96;
-$color-green: #3fbc49;
-$color-orange: #ff6200;
 $color-purple: #6f08c0;
 $color-offwhite: #fcfcfb;
-$color-gray: #3f3b36;
-$color-gray-med: #777;
-$color-gray-lt: $color-gray + #888;
 
 $color-gray-dark: #333;
 
@@ -124,11 +131,11 @@ $background-color-nav: $color-gray-lt + #333;
 $background-color-nav-hover: $color-gray-lt + #222;
 
 $color-body: $color-gray;
-$color-h1: $color-purple;
-$color-h2: $color-blue;
-$color-h3: $color-blue;
-$color-h4: $color-gray;
-$color-h5: $color-gray;
+$color-h1: $color-gray;
+$color-h2: $color-turquoise;
+$color-h3: $color-orange;
+$color-h4: $color-turquoise;
+$color-h5: $color-turquoise;
 $color-h6: $color-gray;
 $color-footer: $color-gray;
 
