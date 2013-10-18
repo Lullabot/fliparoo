@@ -1,0 +1,19 @@
+@import "base";              // Add the base partial that contains our main variables.
+
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+
+/* apply a natural box layout model to all elements - polyfill for IE6,7 */
+* { 
+	box-sizing: border-box; 
+	*behavior: url(../htc/htc/boxsizing.htc); 
+}
+
+img {
+	height: auto !important; 
+	width: auto\9; /* IE 8 */
+}
+

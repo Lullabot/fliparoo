@@ -1,0 +1,176 @@
+/* Set theme variables here */
+
+//
+// "base" partial
+//
+// To make it easier to use all variables and mixins in any Sass file in this
+// theme, each .scss file has an import "base" declaration. And this _base.scss
+// file is in charge of importing all the other partials needed for the theme.
+//
+// This base partial is organized in this way:
+// - First we set any shared Sass variables.
+// - Next we import Compass plug-ins (Sass mixin libraries).
+// - Last we import a _custom.scss partial that includes our custom mixins.
+//
+
+
+//
+// Legacy IE support
+//
+// These variables are used by many mixins to add additional CSS to support
+// specific versions of IE or specific vendor prefixes.
+//
+// To turn on support for IE6 or IE7, set those variables to true.
+//
+// Zen does not require special handling for IE8 or later. But Compass uses that
+// variable for a couple edge cases. We include it for completeness sake. See
+// the documentation at http://compass-style.org/reference/compass/support/
+$legacy-support-for-ie6: true;
+$legacy-support-for-ie7: true;
+$legacy-support-for-ie8: true;
+$box-sizing-polyfill-path: "../htc/boxsizing.htc";
+
+//
+// Font faces, stacks and sizes.
+//
+
+// Compass' vertical_rhythm extension is a powerful tool to set up a vertical
+// rhythm for your entire page. You can see some of its mixins and functions in
+// use in the normalize.scss file.
+// @see http://compass-style.org/reference/compass/typography/vertical_rhythm/
+
+// Path to FontAwesome files
+
+$base-font-size:   16; // The font size set on the root html element.
+$base-line-height: 1.5; // This line-height determines the basic unit of vertical rhythm.
+
+$h1-font-size: (32 / $base-font-size)    * 1em;
+$h2-font-size: (24 / $base-font-size)  * 1em;
+$h3-font-size: (21 / $base-font-size) * 1em;
+$h4-font-size: 1    * 1em;
+$h5-font-size: 0.83 * 1em;
+$h6-font-size: 0.75 * 1em;
+
+
+// The following font family declarations are based on the Microsoft core web
+// fonts which are common fonts available on most computer systems. The DejaVu
+// and Nimbus Sans fonts are commonly available on Linux systems where the MS
+// fonts are less common. Tahoma and Helvetica are also widely available.
+//
+// A user's web browser will look at the comma-separated list and will
+// attempt to use each font in turn until it finds one that is available
+// on the user's computer. The final "generic" font (sans-serif, serif or
+// monospace) hints at what type of font to use if the web browser doesn't
+// find any of the fonts in the list.
+
+/*
+Google Font samples
+font-family: 'Open Sans Condensed', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto Slab', serif;
+*/
+
+// First, let's create some font stacks.
+$serif-fallback: Georgia, "Times New Roman", Times, serif;
+$sans-serif-fallback: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+$serif:     'Roboto Slab', $serif-fallback;
+
+$sans-serif: 'Open Sans', $sans-serif-fallback;
+$sans-serif-condensed: 'Open Sans Condensed', $sans-serif-fallback;
+
+// For an explanation of why "sans-serif" is at the end of this list, see
+// http://meyerweb.com/eric/thoughts/2010/02/12/fixed-monospace-sizing/
+$fixed:         "Courier New", "DejaVu Sans Mono", monospace, sans-serif;
+
+// Now create some variables for the font stacks we want to use on this site.
+$base-font-family: $sans-serif; // The font family set on the html element.
+$font-body:        $sans-serif;
+$font-headings:    $serif;
+$font-monospace:   $fixed;
+
+$font-h1: $serif;
+$font-h2: $serif;
+$font-h3: $serif;
+$font-h4: $serif;
+$font-h5: $serif;
+$font-h6: $serif;
+
+//
+// Colors, etc.
+//
+
+$color-blue: #667b96;
+$color-green: #3fbc49;
+$color-orange: #ff6200;
+$color-purple: #6f08c0;
+$color-offwhite: #fcfcfb;
+$color-gray: #3f3b36;
+$color-gray-med: #777;
+$color-gray-lt: $color-gray + #888;
+
+$color-gray-dark: #333;
+
+$background-color-body: #fff;
+$background-color-page: #fff;
+$background-color-header: #fff;
+$background-color-utility: #fff;
+$background-color-main: #fff;
+$background-color-sidebar-first: #fff;
+$background-color-sidebar-second: #fff;
+$background-color-footer: #fff;
+
+$background-color-nav: $color-gray-lt + #333;
+$background-color-nav-hover: $color-gray-lt + #222;
+
+$color-body: $color-gray;
+$color-h1: $color-purple;
+$color-h2: $color-blue;
+$color-h3: $color-blue;
+$color-h4: $color-gray;
+$color-h5: $color-gray;
+$color-h6: $color-gray;
+$color-footer: $color-gray;
+
+$color-a-link: $color-blue;
+$color-a-visited: $color-blue - #222;
+$color-a-hover: #fff;
+$color-a-active: #fff;
+
+$color-nav-link: $color-gray;
+$color-nav-visited: $color-gray;
+$color-nav-hover: $color-gray - #111;
+$color-nav-active: $color-gray - #111;
+
+$color-header-link: $color-gray;
+$color-header-visited: $color-gray;
+$color-header-hover: #fff;
+$color-header-active: #fff;
+
+$color-footer-link: $color-gray;
+$color-footer-visited: $color-gray;
+$color-footer-hover: $color-gray-med;
+$color-footer-active: $color-gray-med;
+
+//
+// Media Query breakpoints
+//
+$mq-break-phone_wide-sm_tab: 400px;
+$mq-break-lg_tab: 700px;
+$mq-break-desk: 900px;
+
+//
+// Other variables
+//
+$nav-height: 14.5em;
+
+//
+// Partials to be shared with all .scss files.
+//
+@import "compass/css3";
+@import "compass/typography";
+@import "compass/utilities";
+
+@import "zen";              // Add the Zen Grids responsive layout mixins.
+
+@import "custom";           // Import our custom mixins last.

@@ -1,0 +1,127 @@
+
+@import "base";              // Add the base partial that contains our main variables.
+
+
+/******** HTML-BASE ***********/
+/* style overrides for existing HTML elements - no id's or classes */
+body {
+	font-family: $base-font-family;
+	font-size: 100%; /* Fixes exaggerated text resizing in IE6 and IE7 */
+	.page { /* including here to complete the base font sizing */
+		font-size: (16 / $base-font-size) * 1em;
+		line-height: $base-line-height;
+	}
+}
+
+body, caption, th, td, input, textarea, select, option, legend, fieldset {
+    font-family: $font-body; 
+    //font-weight: 100;
+}
+
+h1 {
+    margin: 0.67em 0 0 0;
+    font-family: $font-h1; 
+    font-weight: 200;
+    color: $color-h1;
+    font-size: $h1-font-size; 
+    line-height: 1.15em;
+}
+
+h2 {
+    font-family: $font-h2; 
+    font-weight: 200; 
+    font-style: normal;
+    color: $color-h2;
+    font-size: $h2-font-size; 
+    line-height: 1.15em;
+    margin-bottom: .5em;
+}
+
+h3 {
+    font-family: $font-h3; 
+    font-weight: normal; 
+    font-style: normal;
+    color: $color-h3;
+    font-size: $h3-font-size;
+    line-height: 1.15em;
+    margin-bottom: .5em;
+    margin-top: 0;
+}
+
+h4 {
+    font-family: $font-h4; 
+    font-weight: normal; 
+    font-style: normal;
+    color: $color-h4;
+    font-size: $h4-font-size; 
+    line-height: 1.15em;
+    margin-bottom: 0;
+}
+
+h5 {
+    font-family: $font-h5; 
+    font-weight: normal; 
+    font-style: normal;
+    color: $color-h5;
+    font-size: $h5-font-size;
+    line-height: 1.15em;
+}
+
+h6 {
+    font-family: $font-h6; 
+    font-weight: normal; 
+    font-style: normal;
+    color: $color-h6;
+    font-size: $h6-font-size;
+    line-height: 1.15em;
+}
+
+p {
+	margin-top: 0;
+}
+
+a {
+	@include transition(color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom 0.2s ease-in-out);	
+}
+
+a:link { 
+  	color: $color-a-link; 
+  	text-decoration: none;
+  	padding: .1em; 
+}
+
+a:visited {
+  	color: $color-a-visited;
+  	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  	color: $color-a-hover; 
+  	background-color: $color-blue; 
+  	text-decoration: none;
+	@include border-radius(.15em, .15em);
+}
+
+a:active {
+  	color: $color-a-active;
+  	background-color: $color-green;
+}
+
+img {
+	display: block; 
+	max-width: 100%; 
+	width: 100%; 
+	height: auto;
+}
+
+figure a:hover, 
+figure a:focus {
+	background-color: transparent;
+}
+
+label {
+	font-weight: normal;
+}
+/******* /HTML-BASE ***********/
+
