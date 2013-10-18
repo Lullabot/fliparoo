@@ -63,7 +63,7 @@ header {
 
 
 /* Phone horizontal / small tablet view */
-@media screen and (min-width: $mq-break-phone_wide-sm_tab) {
+@include breakpoint($mq-break-phone_wide-sm_tab) {
 	$zen-column-count: 8;
 	$zen-gutter-width: 1.5em;
 
@@ -118,7 +118,7 @@ header {
 }/*/mediaquery*/
 
 /* Larger tablet view */
-@media screen and (min-width: $mq-break-lg_tab) {
+@include breakpoint($mq-break-lg_tab) {
 	$zen-column-count: 10;
 	$zen-gutter-width: 3em;
 
@@ -207,7 +207,7 @@ header {
 }/*/mediaquery*/
 
 /* Main desktop view */
-@media screen and (min-width: $mq-break-desk) {
+@include breakpoint($mq-break-desk) {
 	$zen-column-count: 12;
 	$zen-gutter-width: 3em;
 

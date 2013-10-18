@@ -17,14 +17,16 @@
         <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/screen.css">
         <link rel="stylesheet" href="css/print.css" media="print">
+		<link rel="stylesheet" href="syntaxhighlighter_3.0.83/styles/shCore.css">
+		<link rel="stylesheet" href="syntaxhighlighter_3.0.83/styles/shThemeDefault.css">
         <!--[if IE]>
             <link rel="stylesheet" href="css/ie.css">
         <![endif]-->
         <!--[if lte IE 7]>
             <link rel="stylesheet" href="css/font-awesome/font-awesome-ie7.css">
         <![endif]-->
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
         <script src="js/vendor/resond.min.js"></script>
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
 		<!--[if lt IE 7 ]>
 		    <script src="js/vendor/dd_belatedpng.js"></script>
 		    <script>DD_belatedPNG.fix("img, .png_bg"); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
@@ -32,11 +34,41 @@
     </head>
     <body>
 
-        <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <div class="page">
+        <h1>Hello world! This is going to be the Fliparoo page!</h1>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+
+  <div class="example">
+    <ul class="display">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+    </ul>
+    <ul class="queue hidden">
+      <li>5</li>
+      <li>6</li>
+      <li>7</li>
+      <li>8</li>
+      <li>9</li>
+      <li>10</li>
+      <li>11</li>
+      <li>12</li>
+    </ul>
+    
+    <script type="text/javascript">
+    </script>
+    
+  </div>
+
+        </div><!-- /page -->
+        
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
+        <script src="js/vendor/jquery.transit.min.js"></script>
+        <script src="js/vendor/jquery.fliparoo.js"></script>
+		<script src="syntaxhighlighter_3.0.83/scripts/shCore.js" type="text/javascript"></script>
+		<script src="syntaxhighlighter_3.0.83/scripts/shBrushJScript.js" type="text/javascript"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 

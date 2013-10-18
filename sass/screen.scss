@@ -91,6 +91,95 @@ textarea {
 /******** MODULE *********/
 /* styles for modular content sections, including alternate states */
 
+/* Fliparoo styles */
+/* Fliparoo styles */
+
+.fliparoo-display-container {
+  -webkit-transform-style: preserve-3d; /* Safari and Chrome */
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.fliparoo-display {
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.fliparoo-front {
+  z-index: 2;
+  position: relative;
+}
+
+.fliparoo-back {
+  z-index: 0;
+  position: absolute;
+}
+
+.fliparoo-animating {
+  z-index: 100;
+}
+
+/*
+ * Convenience style to hide queue
+ */
+.fliparoo-queue {
+  display: none;
+}
+
+/* examples styles */
+ul {
+  font-size: 8em;
+  color: grey;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.example pre {
+  white-space: pre-wrap;
+  clear: both;
+}
+
+ul.display li {
+  display: block;
+  float: left;
+  width: 25%;
+  min-width: 25%;
+  text-align: center;
+  /*position: relative;
+  box-sizing: border-box;*/
+}
+
+ul.display li .fliparoo-display {
+  background-color: #fff;
+  border: 1px solid #CCC;
+}
+
+ul.single li {
+  display: block;
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+ul.single li .fliparoo-display {
+  color: #fff;
+  background-color: #666;
+  border: 2px #CCC solid;
+  box-sizing: border-box;
+}
+
 
 
 

@@ -172,5 +172,6 @@ $nav-height: 14.5em;
 @import "compass/utilities";
 
 @import "zen";              // Add the Zen Grids responsive layout mixins.
+@import "breakpoint";		// Add the Breakpoint mixins
 
 @import "custom";           // Import our custom mixins last.
