@@ -15,7 +15,6 @@
         <link rel="stylesheet" href="css/h5bp_normalize.css">
         <link rel="stylesheet" href="css/font-awesome/font-awesome.css">
         <link rel="stylesheet" href="css/html-base.css">
-        <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/screen.css">
         <link rel="stylesheet" href="css/print.css" media="print">
 		<link rel="stylesheet" href="syntaxhighlighter_3.0.83/styles/shCore.css">
@@ -47,7 +46,6 @@
         	<div class="content">
 		        <h1><span class="icon icon-bullhorn"></span> <span class="orange strong">Fliparoo</span> is a jQuery plugin which is like Vanna White for your web page.</h1>
 	
-	
 				<div class="example">
 					<ul class="display">
 					  <li>1</li>
@@ -66,17 +64,56 @@
 					  <li>12</li>
 					</ul>
 				</div>
+				<div class="intro-copy">
+					<p><strong class="turquoise">An alternative to a carousel</strong> - a little more ambient with less user interaction. This script is intended to swap out items in a "display" list with those in a "queue" list. The most obvious use is for a strip of images which swap out from a larger list.</p>
+					<ul class="links pillbar">
+						<li><a href=""><span class="icon icon-cloud-download"></span> Download</a></li>
+						<li><a href=""><span class="icon icon-desktop"></span> Demo</a></li>
+						<li><a href=""><span class="icon icon-github"></span> Fork on Github</a></li>
+					</ul>
+				</div>
+				<div class="code-sample">
+					<h3>Code Sample</h3>
+					<code>
+						$('#mylist li').fliperoo(); <br />
+						$('#mylist li').fliperoo({displayCount: 5}); <br />
+						$('ul.display li').fliperoo($('ul.queue li')); <br />
+						$('ul.display li').fliperoo($('ul.queue li'), { <br />
+							delay: 1000, <br />
+							transTime: 1000, <br />
+						 	randomize: true <br />
+						}); 					
+					</code>
+				</div>
 			</div>
         </section>
         <section class="section-two">
         	<div class="content">
         		<h2>Why Is Fliparoo Better Than Carousels and Sliders?</h2>
+        		<div class="tab-set">
+        		
+        		<p>For anyone who has tried to implement a carousel or slider on a responsive website, you know that it can be frustrating. These complex animations and interactions often don't resize or re-adapt easily to different display sizes. Although they can look great on desktop browsers, the fact that they become one big "blob" limits options for a responsive design.</p>
+        		</div>
         	</div>
         </section>
         
         <section class="section-three">
         	<div class="content">
-        	Three
+        		<div class="half left">
+        			<h3>Advantages of Fliparoo</h3>
+        			<ul>
+        				<li>Smooth CSS3 Animations</li>
+        				<li>Infinitely style-able and responsive-design friendly</li>
+        				<li>Fallback to non-animated swapping for non-CSS3-savvy browsers</li>
+        			</ul>
+        		</div>
+        		<div class="half right">
+        			<h3>Limitations of Fliparoo</h3>
+        			<ul>
+        				<li>Not (currently) interactive</li>
+        				<li>Elements need to be the same height/width</li>
+        			</ul>
+        		</div>
         	</div>
         </section>
         

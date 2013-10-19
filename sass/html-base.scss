@@ -49,6 +49,12 @@ h1 {
     font-size: $h1-font-size; 
     line-height: 1.15em;
     text-align: center;
+   -moz-font-feature-settings : 'salt= 1,frac= 1,liga= 1','calt=0';
+   -moz-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   -webkit-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   -ms-font-feature-settings : 'salt= 1,frac= 1,liga= 1','calt=0';
+   -o-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
 }
 
 h2 {
@@ -60,6 +66,12 @@ h2 {
     line-height: 1.15em;
     margin-bottom: .5em;
     text-align: center;
+   -moz-font-feature-settings : 'salt= 1,frac= 1,liga= 1','calt=0';
+   -moz-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   -webkit-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   -ms-font-feature-settings : 'salt= 1,frac= 1,liga= 1','calt=0';
+   -o-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
 }
 
 h3 {
@@ -72,6 +84,12 @@ h3 {
     margin-bottom: .5em;
     margin-top: 0; 
     text-align: center;
+   -moz-font-feature-settings : 'salt= 1,frac= 1,liga= 1','calt=0';
+   -moz-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   -webkit-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   -ms-font-feature-settings : 'salt= 1,frac= 1,liga= 1','calt=0';
+   -o-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
 }
 
 h4 {
@@ -105,13 +123,13 @@ h6 {
 p {
 	margin-top: 0; 
 	font-size: (20 / $base-font-size) * 1em;
-	-moz-font-feature-settings:"liga" 1, "dlig" 1, "hlig" 1, "clig" 1; 
-	-moz-font-feature-settings:"liga=1, dlig=1, hlig=1, clig=1"; 
-	-ms-font-feature-settings:"liga" 1, "dlig" 1, "hlig" 1, "clig" 1; 
-	-o-font-feature-settings:"liga" 1, "dlig" 1, "hlig" 1, "clig" 1; 
-	-webkit-font-feature-settings:"liga" 1, "dlig" 1, "hlig" 1, "clig" 1; 
-	font-feature-settings:"liga" 1, "dlig" 1, "hlig" 1, "clig" 1;}
-
+   -moz-font-feature-settings : 'salt= 1,frac= 1,liga= 1','calt=0';
+   -moz-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   -webkit-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   -ms-font-feature-settings : 'salt= 1,frac= 1,liga= 1','calt=0';
+   -o-font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+   font-feature-settings : "salt" 1,"frac" 1,"liga" 1,"calt" 0;
+}
 a {
 	@include transition(color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-bottom 0.2s ease-in-out);	
 }

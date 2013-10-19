@@ -1,6 +1,8 @@
 
 @import "base";              // Add the base partial that contains our main variables.
 
+@import "layout";  
+
 /******** HELPERS ********/
 
 /* apply a natural box layout model to all elements */
@@ -94,6 +96,9 @@ textarea {
 	font-weight: normal;
 }
 
+body {
+	background: $color-gray-lt url(../images/background_1x.png);
+}
 /******* /DESIGN *********/
 
 
@@ -186,54 +191,48 @@ body > footer {
 }
 
 /* examples styles */
-ul {
-  font-size: 8em;
-  color: grey;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.example {
+	.display {
+		font-size: 8em;
+		color: grey;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		li {
+			display: block;
+			float: left;
+			width: 25%;
+			min-width: 25%;
+			text-align: center;
+		}
+	}
+	.hidden {
+	  display: none;
+	}
+	pre {
+		white-space: pre-wrap;
+		clear: both;
+	}
+	.fliparoo-display {
+		background-color: #fff;
+		border: 1px solid #CCC;
+	}	
 }
 
-.hidden {
-  display: none;
+.single {
+	li {
+		display: block;
+		float: left;
+		width: 20%;
+		text-align: center;
+		.fliparoo-display {
+			color: #fff;
+			background-color: #666;
+			border: 2px #CCC solid;
+			box-sizing: border-box;
+		}
+	}
 }
-
-.example pre {
-  white-space: pre-wrap;
-  clear: both;
-}
-
-ul.display li {
-  display: block;
-  float: left;
-  width: 25%;
-  min-width: 25%;
-  text-align: center;
-  /*position: relative;
-  box-sizing: border-box;*/
-}
-
-ul.display li .fliparoo-display {
-  background-color: #fff;
-  border: 1px solid #CCC;
-}
-
-ul.single li {
-  display: block;
-  float: left;
-  width: 20%;
-  text-align: center;
-}
-
-ul.single li .fliparoo-display {
-  color: #fff;
-  background-color: #666;
-  border: 2px #CCC solid;
-  box-sizing: border-box;
-}
-
-
-
 
 /******* /MODULE *********/
 
