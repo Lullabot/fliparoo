@@ -45,45 +45,46 @@
         <section class="section-one">
         	<div class="content">
 		        <h1><span class="icon icon-bullhorn"></span> <span class="orange strong">Fliparoo</span> is a jQuery plugin which is like Vanna White for your web page.</h1>
-	
-				<div class="example">
-					<ul class="display">
-					  <li>1</li>
-					  <li>2</li>
-					  <li>3</li>
-					  <li>4</li>
-					</ul>
-					<ul class="queue hidden">
-					  <li>5</li>
-					  <li>6</li>
-					  <li>7</li>
-					  <li>8</li>
-					  <li>9</li>
-					  <li>10</li>
-					  <li>11</li>
-					  <li>12</li>
-					</ul>
-				</div>
-				<div class="intro-copy">
-					<p><strong class="turquoise">An alternative to a carousel</strong> - a little more ambient with less user interaction. This script is intended to swap out items in a "display" list with those in a "queue" list. The most obvious use is for a strip of images which swap out from a larger list.</p>
-					<ul class="links pillbar">
-						<li><a href=""><span class="icon icon-cloud-download"></span> Download</a></li>
-						<li><a href=""><span class="icon icon-desktop"></span> Demo</a></li>
-						<li><a href=""><span class="icon icon-github"></span> Fork on Github</a></li>
-					</ul>
+				<div class="demo-intro">
+					<div class="example">
+						<ul class="display">
+						  <li>1</li>
+						  <li>2</li>
+						  <li>3</li>
+						  <li>4</li>
+						</ul>
+						<ul class="queue hidden">
+						  <li>5</li>
+						  <li>6</li>
+						  <li>7</li>
+						  <li>8</li>
+						  <li>9</li>
+						  <li>10</li>
+						  <li>11</li>
+						  <li>12</li>
+						</ul>
+					</div>
+					<div class="intro-copy">
+						<p><strong class="turquoise">An alternative to a carousel</strong> - a little more ambient with less user interaction. This script is intended to swap out items in a "display" list with those in a "queue" list. The most obvious use is for a strip of images which swap out from a larger list.</p>
+						<ul class="links pillbar">
+							<li><a href=""><span class="icon icon-cloud-download"></span> Download</a></li>
+							<li><a href=""><span class="icon icon-desktop"></span> Demo</a></li>
+							<li><a href=""><span class="icon icon-github"></span> Fork on Github</a></li>
+						</ul>
+					</div>
 				</div>
 				<div class="code-sample">
 					<h3>Code Sample</h3>
-					<code>
-						$('#mylist li').fliperoo(); <br />
-						$('#mylist li').fliperoo({displayCount: 5}); <br />
-						$('ul.display li').fliperoo($('ul.queue li')); <br />
-						$('ul.display li').fliperoo($('ul.queue li'), { <br />
-							delay: 1000, <br />
-							transTime: 1000, <br />
-						 	randomize: true <br />
-						}); 					
-					</code>
+<pre><code>
+$('#mylist li').fliperoo(); 
+$('#mylist li').fliperoo({displayCount: 5}); 
+$('ul.display li').fliperoo($('ul.queue li')); 
+$('ul.display li').fliperoo($('ul.queue li'), { 
+	delay: 1000, 
+	transTime: 1000, 
+ 	randomize: true 
+}); 					
+</code></pre>
 				</div>
 			</div>
         </section>
@@ -119,19 +120,140 @@
         
         <section class="section-four">
         	<div class="content">
-	        	<h2>Usage Notes</h2>
-	
-				<h2 class="orange">Affluence is an affliction that starts in the home.</h2>
-				
-				<p>This last device produces an intensely brilliant far-reaching white light, but as the natural oil which it requires can only be obtained by mining in one of several widely separated and remote localities it is seldom used by these creatures whose only thought is for today, and whose hatred for manual labor has kept them in a semi-barbaric state for countless ages.</p>
-				
-				<h3>A brief interlude set in H3</h3>
-				<p>After Sola had replenished my coverings I again slept, nor did I awaken until daylight.  The other occupants of the room, five in number, were all females, and they were still sleeping, piled high with a motley array of silks and furs.  Across the threshold lay stretched the sleepless guardian brute, just as I had last seen him on the preceding day; apparently he had not moved a muscle; his eyes were fairly glued upon me, and I fell to wondering just what might befall me should I endeavor to escape.</p>
-				
-				<p>I have ever been prone to seek adventure and to investigate and experiment where wiser men would have left well enough alone.  It therefore now occurred to me that the surest way of learning the exact attitude of this beast toward me would be to attempt to leave the room. I felt fairly secure in my belief that I could escape him should he pursue me once I was outside the building, for I had begun to take great pride in my ability as a jumper.  Furthermore, I could see from the shortness of his legs that the brute himself was no jumper and probably no runner.</p>
-				
-				<p>Slowly and carefully, therefore, I gained my feet, only to see that my watcher did the same; cautiously I advanced toward him, finding that by moving with a shuffling gait I could retain my balance as well as make reasonably rapid progress.  As I neared the brute he backed cautiously away from me, and when I had reached the open he moved to one side to let me pass.  He then fell in behind me and followed about ten paces in my rear as I made my way along the deserted street.</p>
+	        	<h2 class="section-title">Usage Notes</h2>
+				<div class="usage-notes-menu">
+					<ul class="menu usage">
+						<li><a href="#usage">How it Works</a></li>
+						<li><a href="#single_v_double">Single Vs. Double Lists</a></li>
+						<li><a href="#options">Options</a></li>
+						<li><a href="#performance">Performance</a></li>
+						<li><a href="#fallback">Fallback</a></li>
+						<li><a href="#legal">Legal Stuff</a></li>
+						<li><a href="#demo">Demo</a></li>
+					</ul>
+				</div>
 
+<div class="usage">
+<h2>How it Works</h2>
+<p>Fliparoo should be pointed at container elements representing the display and queue list. Most web developers will use a <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> list for this purpose. The children of these elements are used as the list items for display and queue. Since it is invalid to add elements between the <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> items, Fliparoo creates a <code>&lt;div&gt;</code> element inside of each display <code>&lt;li&gt;</code> and effectively moves the content of the <code>&lt;li&gt;</code> into the <code>&lt;div&gt;</code>. </p>
+
+<h3>Example:</h3>
+
+<pre><code>&lt;ul&gt;
+  &lt;li&gt;one&lt;/li&gt;
+  &lt;li&gt;two&lt;/li&gt;
+  &lt;li&gt;three&lt;/li&gt;
+  &lt;li&gt;four&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>after processing, becomes:</p>
+
+<pre><code>&lt;ul&gt;
+  &lt;li class="fliparoo-display-container"&gt;
+    &lt;div class="fliparoo-display fliparoo-front"&gt;one&lt;/div&gt;
+    &lt;div class="fliparoo-display fliparoo-back"&gt;five&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="fliparoo-display-container"&gt;
+    &lt;div class="fliparoo-display fliparoo-front"&gt;two&lt;/div&gt;
+    &lt;div class="fliparoo-display fliparoo-back"&gt;six&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="fliparoo-display-container"&gt;
+    &lt;div class="fliparoo-display fliparoo-front"&gt;three&lt;/div&gt;
+    &lt;div class="fliparoo-display fliparoo-back"&gt;seven&lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li class="fliparoo-display-container"&gt;
+    &lt;div class="fliparoo-display fliparoo-front"&gt;four&lt;/div&gt;
+    &lt;div class="fliparoo-display fliparoo-back"&gt;eight&lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>Note the addition of classes and <code>&lt;div&gt;</code>s surrounding content.</p>
+
+<p>The <code>&lt;li&gt;</code> "container" items are the items which use 3D transforms to flip. The front/back divs flip with their parent. However, note that the <code>&lt;li&gt;</code> items should not have a background color on them or they will obscure the child elements when flipped. Instead add styling to the "fliparoo-display" items. Also, <code>overflow:hidden</code> on the li items will be problematic. Again, apply it to the nested divs.</p>
+
+<p>Also note that the display items need to be a type of html element which can accept sub-elements. Above, each <code>&lt;li&gt;</code> gets <code>&lt;div&gt;</code> elements inserted into it. For instance, a collection of <code>&lt;img&gt;</code> elements wouldn't work because you can't nest another element inside an image.</p>
+
+<a id="single_v_double"></a>
+<h2>Single vs. Double Lists</h2>
+
+<p>Fliparoo works with either two lists or just one. In the case of two lists, one list is the "display" list and the other is the "queue". This allows the queue list to be hidden with CSS so if Javascript is disabled and Fliparoo doesn't do anything, only a few of the list items will be displayed. This also solves the FOUC (flash of unstyled content) problem which can happen briefly during the page load. </p>
+
+<p>It is also possible to use a single list and define the number of items to display using the <code>displayCount</code> parameter. Although this is an easier method for most web developers, keep in mind that if Javascript is disabled, all list items will be diplayed. Please allow for this in your CSS styling.</p>
+
+<p>Note that these 'lists' don't actually need to be <code>&lt;li&gt;</code> lists. You could also use <code>&lt;div&gt;</code>s or whatever html meets your needs.</p>
+
+<a id="options"></a>
+<h2>Options</h2>
+
+<p>You can find these at the bottom of the <code>jquery.fliparoo.js</code> file:</p>
+
+<p>javascript
+    delay: 2000,
+    // milliseconds between flips</p>
+
+<pre><code>transTime: 1000,
+// transition time of each flip in milliseconds
+
+easing: 'cubic-bezier(.44,-0.23,.51,1.44)',
+// easing of flip animation
+// options from http://ricostacruz.com/jquery.transit/
+// I recommend http://cubic-bezier.com/
+
+setDelay: 0,
+// delay between iterations through the display set
+// This is an additional delay added after all items in display set have been flipped
+
+randomize: false,
+// true = Randomize items to be displayed.
+// false = Go through display and queue in order.
+
+displayCount: 4,
+// when using a single list, how many items should be displayed?
+// the remainder will be hidden
+// 0 = all (hide none)
+
+displayOrder: 'random',
+// options: 'random', 'forward', 'reverse'
+// how should the repeating pattern of display order be chosen?
+
+perspective: '500px',
+// Depth of perspective. Lower values give a more pronounced effect.
+
+rotateAxis: 'Y',
+// options: 'X', 'Y', 'XY', 'XZ', 'YZ, or 'XYZ'
+// rotate along X, Y, or all axes
+// simple X or Y work best - others are buggy
+
+rotateDirection: '+',
+// options: '+', or '-'
+// rotate forward or back
+
+flipFlop: false,
+// if true, rotationDirection will alternate with each flip
+
+transit: {},
+// Additional Transit properties. See http://ricostacruz.com/jquery.transit/
+</code></pre>
+
+
+<a id="performance"></a>
+<h2>Performance</h2>
+
+<p>Fliparoo uses the Transit plugin, which applies CSS3 transition animations to the display elements. Most web browsers will engage hardware acceleration for CSS3 animations, making them much more efficient than Javascript-based or even Flash-based animations. However, these animations can still be processor intensive, especially when many different animations are happening simultaneously on the same page. Test in a variety of browsers on a variety of operating systems and processors before deploying. You've been warned.</p>
+
+<a id="fallback"></a>
+<h2>Fallback</h2>
+
+<p>Older browsers without support for 3D transformations will simply get no animations. </p>
+
+<a id="legal"></a>
+<h2>Legal Stuff</h2>
+
+<p>Fliparoo is copyright &copy;2013 by <a href="http://www.lullabot.com">Lullabot</a> and licensed under the <a href="http://opensource.org/licenses/MIT">MIT License</a> without warranty or guarantees of any kind.</p>
+
+</div>
         	</div>
         </section>
 

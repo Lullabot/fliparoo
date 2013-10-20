@@ -44,9 +44,9 @@ $box-sizing-polyfill-path: "../htc/boxsizing.htc";
 $base-font-size:   16; // The font size set on the root html element.
 $base-line-height: 1.5; // This line-height determines the basic unit of vertical rhythm.
 
-$h1-font-size: (32 / $base-font-size)    * 1em;
-$h2-font-size: (24 / $base-font-size)  * 1em;
-$h3-font-size: (21 / $base-font-size) * 1em;
+$h1-font-size: (36 / $base-font-size)    * 1em;
+$h2-font-size: (48 / $base-font-size)  * 1em;
+$h3-font-size: (32 / $base-font-size) * 1em;
 $h4-font-size: 1    * 1em;
 $h5-font-size: 0.83 * 1em;
 $h6-font-size: 0.75 * 1em;
@@ -110,6 +110,7 @@ $color-turquoise: #3dc5ae;
 $color-turquoise-darker: #00a79e;
 $color-gray: #656565;
 $color-gray-med: #eaeaea;
+$color-gray-med2: #e2e2e2;
 $color-gray-lt: #f5f4f4;
 
 $color-blue: #667b96;
@@ -162,9 +163,9 @@ $color-footer-active: $color-gray-med;
 //
 // Media Query breakpoints
 //
-$mq-break-phone_wide-sm_tab: 400px;
-$mq-break-lg_tab: 700px;
-$mq-break-desk: 900px;
+$mq-s-tab: 400px;
+$mq-l-tab: 700px;
+$mq-desk: 900px;
 
 //
 // Other variables

@@ -91,6 +91,10 @@ textarea {
 	color: #fff;
 }
 
+.turquoise {
+	color: $color-turquoise;
+}
+
 .strong {
 	font-family: $sans-serif-bold;
 	font-weight: normal;
@@ -109,7 +113,75 @@ body {
 
 /*****  SECTION-ONE Styles *****/
 .section-one {
-	background-color: transparent;
+	background-color: transparent; 
+	h1 {
+		@include breakpoint($mq-s-tab) {
+			@include zen-clear();
+			@include zen-grid-item(10, 2); 
+		}
+		@include breakpoint($mq-l-tab) {
+			@include zen-clear();
+			@include zen-grid-item(8, 3); 
+		}
+		@include breakpoint($mq-desk) { 
+			padding: 1.5em 0;
+			@include zen-clear();
+			@include zen-grid-item(8, 3); 
+		}
+	}
+	.demo-intro { 
+		@include zen-clear();
+		@include breakpoint($mq-s-tab) {
+			@include zen-clear();
+		}
+		@include breakpoint($mq-l-tab) {
+			@include zen-clear();
+			@include zen-grid-item(10, 2); 
+		}
+		@include breakpoint($mq-desk) { 
+			@include zen-clear();
+			@include zen-grid-item(10, 2); 
+		}
+	}
+}
+.intro-copy { 
+	background-color: $color-gray-med; 
+	border-left: solid 10px $color-gray-med2; 
+	border-right: solid 10px $color-gray-med2; 
+	border-bottom: solid 10px $color-gray-med2; 
+	padding: 2em;
+	@include zen-clear();
+	p {
+		text-align: center;
+		@include breakpoint($mq-desk) { 
+			@include zen-clear();
+			@include zen-grid-item(8, 3); 
+		} 
+	}
+	.links {
+		@include zen-clear();
+	}
+}
+.code-sample { 
+	margin-top: 3em;
+	margin-bottom: -6em; 
+	@include zen-clear();
+	@include breakpoint($mq-s-tab) {
+		@include zen-clear();
+		@include zen-grid-item(8, 3); 
+	}
+	@include breakpoint($mq-l-tab) {
+		@include zen-clear();
+		@include zen-grid-item(8, 3); 
+	}
+	@include breakpoint($mq-desk) { 
+		@include zen-clear();
+		@include zen-grid-item(6, 4); 
+	}
+	pre {
+		border: solid 8px $color-turquoise-darker; 
+		@include border-radius(0);
+	}
 }
 
 /***** /SECTION-ONE Styles *****/
@@ -117,9 +189,26 @@ body {
 /*****  SECTION-TWO Styles *****/
 .section-two {
 	background-color: $color-turquoise-darker;
-	color: #fff;
+	color: #fff; 
+	padding-top: 6em;
 	h2 {
 		color: #fff;
+		@include zen-clear();
+		@include breakpoint($mq-s-tab) {
+			@include zen-clear();
+			@include zen-grid-item(8, 3); 
+		}
+		@include breakpoint($mq-l-tab) {
+			@include zen-clear();
+			@include zen-grid-item(8, 3); 
+		}
+		@include breakpoint($mq-desk) { 
+			@include zen-clear();
+			@include zen-grid-item(8, 3); 
+		}
+	}
+	.tab-set {
+		@include zen-clear();
 	}
 }
 
@@ -127,14 +216,80 @@ body {
 
 /*****  SECTION-THREE Styles *****/
 .section-three {
-	background-color: transparent;
+	background-color: transparent; 
+	position: relative;  
+	h3 { 
+		color: $color-turquoise-darker;
+	}
 }
-
+.half {
+	width: 50%; 
+	margin-top: 4em; 
+	margin-bottom: 4em; 
+	position: relative; 
+	height: 100%; 
+	&.left {
+		padding-right: 1.5em; 
+		float: left;
+	}
+	&.right {
+		padding-left: 1.5em; 
+		float: right;
+	} 
+	ul {
+		background-color: #fff; 
+		border: solid 10px $color-gray-med;
+		min-height: 10em; 
+		padding: 1em 2em;
+	}
+}
 /***** /SECTION-THREE Styles *****/
 
 /*****  SECTION-FOUR Styles *****/
 .section-four {
-	background-color: $color-gray-med;
+	background-color: $color-gray-med; 
+	.section-title {
+		border-bottom: solid 2px $color-gray-med2;
+	}
+	.usage-notes-menu {
+		@include breakpoint($mq-s-tab) {
+			@include zen-float();
+			@include zen-grid-item(3, 1); 
+		}
+		@include breakpoint($mq-l-tab) {
+			@include zen-float();
+			@include zen-grid-item(3, 1); 
+		}
+		@include breakpoint($mq-desk) { 
+			@include zen-float();
+			@include zen-grid-item(3, 1); 
+		}
+	}
+	.usage {
+		@include breakpoint($mq-s-tab) {
+			@include zen-float();
+			@include zen-grid-item(9, 4); 
+		}
+		@include breakpoint($mq-l-tab) {
+			@include zen-float();
+			@include zen-grid-item(9, 4); 
+		}
+		@include breakpoint($mq-desk) { 
+			@include zen-float();
+			@include zen-grid-item(9, 4); 
+		}
+		h2, h3, h4 {
+			text-align: left;
+		}
+		h2 { 
+			font-size: (32 / $base-font-size) * 1em; 
+			font-family: $sans-serif; 
+			font-weight: normal;
+		}
+		h3 { 
+			font-size: (21 / $base-font-size) * 1em; 
+		}
+	}
 }
 
 /***** /SECTION-FOUR Styles *****/
@@ -142,12 +297,26 @@ body {
 /*****  FOOTER Styles *****/
 body > footer {
 	background-color: $color-orange; 
+	@include zen-clear();
 	h2 {
 		color: #fff;
 	}
 }
 
 /***** /FOOTER Styles *****/
+
+/*****  CODE SAMPLE Styles *****/
+pre {
+	background-color: #fff; 
+	color: $color-gray;
+	padding: 1.5em;
+	border: solid 3px $color-gray-med2;
+	@include border-radius(0.5em);
+}
+
+/***** /CODE SAMPEL Styles *****/
+
+
 
 /* Fliparoo styles */
 
