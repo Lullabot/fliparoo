@@ -111,6 +111,31 @@ body {
 /******** MODULE *********/
 /* styles for modular content sections, including alternate states */
 
+/*****  HEADER Styles *****/
+
+body > header {
+	padding: 2em 0;	
+}
+
+.fliparoo {
+	width: 6 * zen-unit-width(); 
+	background-image: url(../images/fliparoo.png);
+	background-image: url(../images/fliparoo.svg), none;
+	background-size: 100%;
+	background-repeat: no-repeat;
+		@include breakpoint($mq-s-tab) {
+			width: 3.5 * zen-unit-width(); 
+		}
+		@include breakpoint($mq-l-tab) {
+			width: 2.5 * zen-unit-width(); 
+		}
+		@include breakpoint($mq-desk) { 
+			width: 2.5 * zen-unit-width();
+		}
+}
+
+/***** /HEADER Styles *****/
+
 /*****  SECTION-ONE Styles *****/
 .section-one {
 	background-color: transparent; 
@@ -300,9 +325,31 @@ body > footer {
 	@include zen-clear();
 	h2 {
 		color: #fff;
+		margin-bottom: 0;
 	}
 }
-
+.footer-row2 {
+	background-color: $color-orange-darker;
+	padding-top: 2em; 
+	padding-bottom: 1em;
+}
+.lullabot {
+	width: 2 * zen-unit-width(); 
+	background-image: url(../images/lullabot.png);
+	background-image: url(../images/lullabot.svg), none;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	margin-left: -0.5em; 
+	a {
+		display: block;
+		&:hover {
+			background-color: transparent;
+		}
+	}
+}
+.tagline {
+	color: #fff;
+}
 /***** /FOOTER Styles *****/
 
 /*****  CODE SAMPLE Styles *****/
@@ -314,9 +361,78 @@ pre {
 	@include border-radius(0.5em);
 }
 
-/***** /CODE SAMPEL Styles *****/
+/***** /CODE SAMPLE Styles *****/
 
+.links { 
+	//border: solid 10px $color-gray-med2;
+	//@include border-radius(2em); 
+	margin: 1em auto;
+	text-align: center;
+	li {
+		display: inline-block; 
+		*display: inline; 
+		*zoom: 1;
+		text-align: center;
+	}
+	a {
+		display: block; 
+		padding: 0.5em 1.25em;
+		background-color: $color-orange; 
+		color: #fff; 
+		line-height: 2em;
+		font-family: $sans-serif-bold;
+		margin-left: -5px; 
+		border-top: solid 10px $color-gray-med2;
+		border-bottom: solid 10px $color-gray-med2;
+		&:link, &:visited {
+			color: #fff;
 
+		}
+		&:hover {
+			background-color: lighten($color-orange, 10%);
+		}
+		.icon {
+			color: $color-orange-darker;
+			margin-right: 0.5em; 
+			font-size: 1.5em;
+			line-height: 0.5em;
+		}
+		&.download { 
+			background-color: $color-turquoise;
+			border-left: 10px solid $color-gray-med2;
+			@include border-radius(2em 0 0 2em);
+			&:hover {
+				background-color: lighten($color-turquoise, 10%);
+			}
+			.icon {
+				color: $color-turquoise-darker;
+				margin-right: 0.5em;
+				margin-bottom: -0.5em;
+			}
+		}
+		&.github { 
+			background-color: $color-green;
+			border-right: 10px solid $color-gray-med2;
+			@include border-radius(0 2em 2em 0);
+			&:hover {
+				background-color: lighten($color-green, 10%);
+			}
+			.icon {
+				color: $color-green-darker;
+				margin-right: 0.5em;
+			}
+		}
+		body > footer &, 
+		body > footer &.github, 
+		body > footer &.download {
+			border-color: $color-orange-darker;
+		}
+	}
+	body > footer & {
+		margin-top: 0; 
+		margin-bottom: 3em;
+	}
+}
 
 /* Fliparoo styles */
 
