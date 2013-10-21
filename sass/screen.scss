@@ -508,6 +508,34 @@ body > footer {
 .tagline {
 	color: #fff;
 }
+
+.footer-menu { 
+	float: right;
+	ul { 
+		list-style: none;
+		list-style-image: none;
+		text-align: center; 
+		li { 
+			list-style: none; 
+			list-style-image: none;
+			text-align: center;
+			display: inline-block; 
+			*display: inline; 
+			*zoom: 1;
+		}
+	}
+	a:link, a:visited {
+		color: #fff; 
+		display: block; 
+		padding: 0.25em 0.75em;
+	}
+	a:hover, a:active {
+		color: #fff; 
+		text-decoration: underline; 
+		background-color: transparent;
+	}
+}
+
 /***** /FOOTER Styles *****/
 
 /*****  CODE SAMPLE Styles *****/
@@ -525,7 +553,8 @@ pre {
 	//border: solid 10px $color-gray-med2;
 	//@include border-radius(2em); 
 	margin: 1em auto;
-	text-align: center;
+	text-align: center; 
+	padding: 0;
 	li {
 		display: inline-block; 
 		*display: inline; 
