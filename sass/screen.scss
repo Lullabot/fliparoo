@@ -273,9 +273,103 @@ body > header {
 			@include zen-grid-item(8, 3); 
 		}
 	}
-	.tab-set {
+	.tab-set { 
+		margin-bottom: 3em;
 		@include zen-clear();
+		@include zen-grid-item(10, 2); 
 	}
+	.tab-links { 
+		list-style: none;
+		list-style-image: none;
+		text-align: center; 
+		margin: 0 0 -5px 0;
+		padding: 0;
+		li { 
+			width: 2.5 * zen-unit-width();
+			list-style: none; 
+			list-style-image: none;
+			text-align: center;
+			display: inline-block; 
+			*display: inline; 
+			*zoom: 1;
+		}
+		a {
+			color: $color-turquoise; 
+			display: block;
+			&:link, &:visited {
+				color: $color-turquoise; 
+			}
+			&:hover, &:active {
+				color: #fff;
+				background-color: transparent;
+			}
+			&.active {
+				color: #fff;
+				font-family: $sans-serif-bold;
+			}
+		}
+		.number {
+			color: $color-turquoise-darker; 
+			background-color: $color-turquoise; 
+			@include border-radius(3em);
+			padding: 0.35em 0.75em;
+			margin-bottom: 0.25em;
+			display: inline-block; 
+
+		}
+		.active .number, 
+		a:hover .number {
+			background-color: #fff;
+		}
+		.tab-arrow {
+			width: 0; 
+			height: 0; 
+			border-bottom: 1.5em solid transparent; 
+			border-left: 1em solid transparent; 
+			border-right: 1em solid transparent; 
+			margin: 1em auto 0 auto;
+			
+		} 
+		.active .tab-arrow {
+			border-bottom-color: $color-turquoise;
+		}
+	}
+	.tabs {
+		padding: 1em 2em;
+		border: solid 10px $color-turquoise; 
+		display: none;
+		p {
+			padding-left: 1 * zen-unit-width();
+			padding-top: 1em; 
+			line-height: 1.5em;
+			display: block;
+		}
+		&.active {
+			display: table;
+		}
+	}
+	.tab1icon {
+		width: 2 * zen-unit-width(); 
+		//float: left;
+		background-image: url(../images/tab_icon1.png);
+		background-image: url(../images/tab_icon1.svg), none;
+		background-size: 100%;
+		background-position-y: 50%;
+		background-repeat: no-repeat;
+		display: table-cell;
+		vertical-align: middle;
+			@include breakpoint($mq-s-tab) {
+				//width: 3.5 * zen-unit-width(); 
+			}
+			@include breakpoint($mq-l-tab) {
+				//width: 2.5 * zen-unit-width(); 
+			}
+			@include breakpoint($mq-desk) { 
+				//width: 2.5 * zen-unit-width();
+			}
+	}
+
+
 }
 
 /***** /SECTION-TWO Styles *****/
