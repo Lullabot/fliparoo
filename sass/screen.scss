@@ -119,6 +119,7 @@ body > header {
 
 .fliparoo {
 	width: 6 * zen-unit-width(); 
+	float: left;
 	background-image: url(../images/fliparoo.png);
 	background-image: url(../images/fliparoo.svg), none;
 	background-size: 100%;
@@ -134,6 +135,46 @@ body > header {
 		}
 }
 
+.menu.main {
+	float: right; 
+	margin: 0;
+	li {
+		display: inline-block; 
+		*display: inline; 
+		*zoom: 1;
+		ul {
+			@include breakpoint($mq-l-tab) {
+				display: none; 
+			}
+		}
+	}
+	a {
+		font-family: $sans-serif-bold; 
+		font-weight: normal; 
+		display: block; 
+		padding: 0.5em 1em;
+		&:link, &:visited {
+			color: $color-orange;
+		}
+		&:hover, &:active {
+			color: lighten($color-orange, 10%);
+			text-decoration: underline;
+			background-color: transparent;
+		}
+		&.download {
+			@include border-radius(2em);
+			&:link, &:visited {
+				color: #fff; 
+				background-color: $color-orange;
+			}
+			&:hover, &:active {
+				background-color: lighten($color-orange, 10%);
+				text-decoration: none;
+			}
+		}
+	}
+	
+}
 /***** /HEADER Styles *****/
 
 /*****  SECTION-ONE Styles *****/
@@ -149,7 +190,7 @@ body > header {
 			@include zen-grid-item(8, 3); 
 		}
 		@include breakpoint($mq-desk) { 
-			padding: 1.5em 0;
+			padding: 0.5em 0 1.5em 0;
 			@include zen-clear();
 			@include zen-grid-item(8, 3); 
 		}
@@ -290,7 +331,27 @@ body > header {
 			@include zen-grid-item(3, 1); 
 		}
 	}
-	.usage {
+	.usage-notes {
+		list-style: none;
+		list-style-image: none;
+		margin: 0; 
+		padding: 0;
+		li {
+			list-style: none; 
+			list-style-image: none;
+		}
+		a:link, a:visited {
+			padding: 0.5em 1em;
+			@include border-radius(0 2em 2em 0); 
+			display: block;
+		}
+		a:hover, a:active {
+			text-decoration: none; 
+			color: #fff; 
+			background-color: $color-green;
+		}		
+	}
+	.usage { 
 		@include breakpoint($mq-s-tab) {
 			@include zen-float();
 			@include zen-grid-item(9, 4); 
@@ -302,6 +363,9 @@ body > header {
 		@include breakpoint($mq-desk) { 
 			@include zen-float();
 			@include zen-grid-item(9, 4); 
+		}
+		> h2:first-child {
+			margin-top: 0;
 		}
 		h2, h3, h4 {
 			text-align: left;
