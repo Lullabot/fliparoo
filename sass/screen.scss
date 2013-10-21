@@ -305,7 +305,9 @@ body > header {
 			}
 			&.active {
 				color: #fff;
-				font-family: $sans-serif-bold;
+				font-family: $sans-serif-bold; 
+				background-color: transparent;
+				outline: 0;
 			}
 		}
 		.number {
