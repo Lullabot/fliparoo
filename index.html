@@ -37,11 +37,12 @@
 		</noscript>
     </head>
     <body>
+    	<div class="page">
 		<header>
         	<div class="content">
         			<div class="fliparoo"><img src="images/fliparoo_spacer.png" alt="Fliparoo"></div>
-					<ul class="menu main">
-						<li><a href="">Why Use?</a></li>
+					<ul class="menu main nav_main">
+						<li><a href="#why">Why Use?</a></li>
 						<li><a href="#usage">Usage Notes</a>
 							<ul>
 								<li><a href="#usage">How it Works</a></li>
@@ -103,6 +104,7 @@ $('ul.display li').fliperoo($('ul.queue li'), {
         </section>
         <section class="section-two">
         	<div class="content">
+        		<a id="why"></a>
         		<h2>Why Is Fliparoo Better Than Carousels and Sliders?</h2>
         		<div class="tab-set">
 	        		<ul class="tab-links">
@@ -151,8 +153,8 @@ $('ul.display li').fliperoo($('ul.queue li'), {
         	<div class="content">
 	        	<h2 class="section-title">Usage Notes</h2>
 				<div class="usage-notes-menu">
-					<ul class="menu usage-notes">
-						<li><a href="#usage">How it Works</a></li>
+					<ul class="menu usage-notes nav">
+						<li><a href="#usage" class="current">How it Works</a></li>
 						<li><a href="#single_v_double">Single Vs. Double Lists</a></li>
 						<li><a href="#options">Options</a></li>
 						<li><a href="#performance">Performance</a></li>
@@ -162,7 +164,7 @@ $('ul.display li').fliperoo($('ul.queue li'), {
 					</ul>
 				</div>
 
-<div class="usage">
+<div class="how-it-works">
 <h2>How it Works</h2>
 <p>Fliparoo should be pointed at container elements representing the display and queue list. Most web developers will use a <code>&lt;ul&gt;</code> or <code>&lt;ol&gt;</code> list for this purpose. The children of these elements are used as the list items for display and queue. Since it is invalid to add elements between the <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> items, Fliparoo creates a <code>&lt;div&gt;</code> element inside of each display <code>&lt;li&gt;</code> and effectively moves the content of the <code>&lt;li&gt;</code> into the <code>&lt;div&gt;</code>. </p>
 
@@ -310,9 +312,13 @@ transit: {},
         		</div>
         	</div>
         </footer>
-        
+    	</div>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.0.3.min.js"><\/script>')</script>
+        <script src="js/vendor/jquery-waypoints-master/waypoints.min.js"></script>
+        <script src="js/vendor/jquery-waypoints-master/shortcuts/sticky-elements/waypoints-sticky.min.js"></script>
+        <script src="js/vendor/jQuery-One-Page-Nav-master/jquery.scrollTo.js"></script>
+		<script src="js/vendor/jQuery-One-Page-Nav-master/jquery.nav.js"></script>
         <script src="js/vendor/jquery.transit-master/jquery.transit.min.js"></script>
         <script src="js/vendor/jquery.fliparoo.js"></script>
 		<script src="js/vendor/syntaxhighlighter_3.0.83/scripts/shCore.js" type="text/javascript"></script>
@@ -320,6 +326,23 @@ transit: {},
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 
+        <script>
+$('.waypoint')
+    .waypoint(function(direction) {
+        $('a[href="#' + this.id + '"]').toggleClass('active', direction === 'down');
+    }, {
+//          context: '#wrapper', // Removed this, see next post!
+        offset: '100%'
+    })
+    .waypoint(function(direction) {
+        $('a[href="#' + this.id + '"]').toggleClass('active', direction === 'up');
+    }, {
+//          context: '#wrapper', // Removed this, see next post!
+        offset: function() {
+        return -$(this).height();
+    }
+});
+        </script>
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

@@ -231,8 +231,11 @@ body > header {
 .code-sample { 
 	margin-top: 3em;
 	margin-bottom: -6em; 
+	font-size: (12 / $base-font-size) * 1em; 
 	@include zen-clear();
-	@include breakpoint($mq-s-tab) {
+	@include zen-grid-item(12, 1); 
+	@include breakpoint($mq-s-tab) { 
+		font-size: (16 / $base-font-size) * 1em; 
 		@include zen-clear();
 		@include zen-grid-item(8, 3); 
 	}
@@ -385,19 +388,22 @@ body > header {
 	}
 }
 .half {
-	width: 50%; 
+	width: 100%; 
 	margin-top: 4em; 
 	margin-bottom: 4em; 
 	position: relative; 
 	height: 100%; 
-	&.left {
-		padding-right: 1.5em; 
-		float: left;
+	@include breakpoint($mq-s-tab) {
+		width: 50%; 
+		&.left {
+			padding-right: 1.5em; 
+			float: left;
+		}
+		&.right {
+			padding-left: 1.5em; 
+			float: right;
+		} 
 	}
-	&.right {
-		padding-left: 1.5em; 
-		float: right;
-	} 
 	ul {
 		background-color: #fff; 
 		border: solid 10px $color-gray-med;
@@ -421,12 +427,31 @@ body > header {
 		@include breakpoint($mq-l-tab) {
 			@include zen-float();
 			@include zen-grid-item(3, 1); 
+			&.stuck {
+				position: fixed;
+				top: 1em; 
+				//width: 20%;
+			}
 		}
 		@include breakpoint($mq-desk) { 
 			@include zen-float();
 			@include zen-grid-item(3, 1); 
 		}
 	}
+	.sticky-wrapper {
+		@include zen-float();
+		@include zen-grid-item(3, 1);
+		.usage-notes-menu {
+			width: 100%; 
+			&.stuck {
+				width: 17.5%;
+			}
+			
+		}
+	}
+            .active     { background-color: orange; }
+
+
 	.usage-notes {
 		list-style: none;
 		list-style-image: none;
@@ -441,13 +466,13 @@ body > header {
 			@include border-radius(0 2em 2em 0); 
 			display: block;
 		}
-		a:hover, a:active {
+		a:hover, a:active, a:focus, .current a {
 			text-decoration: none; 
 			color: #fff; 
 			background-color: $color-green;
 		}		
 	}
-	.usage { 
+	.how-it-works { 
 		@include breakpoint($mq-s-tab) {
 			@include zen-float();
 			@include zen-grid-item(9, 4); 
@@ -675,11 +700,16 @@ pre {
 		li {
 			display: block;
 			float: left;
-			width: 25%;
-			min-width: 25%;
+			width: 50%;
+			min-width: 50%;
 			text-align: center;
 			margin: 0; 
 			padding: 0;
+			@include breakpoint($mq-s-tab) {
+				 width: 25%; 
+				 min-width: 25%;
+			}
+
 		}
 	}
 	.hidden {

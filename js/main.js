@@ -68,17 +68,43 @@ $(function() {
 	}
 
 
-			$('#nav-toggle').click(function(e) {
-				e.preventDefault();
-				$('.main-menu').toggleClass('open');
-				$('body').toggleClass('nav-open');
-				$(this).find('span').toggleClass('icon-reorder icon-remove-sign');
+	$('#nav-toggle').click(function(e) {
+		e.preventDefault();
+		$('.main-menu').toggleClass('open');
+		$('body').toggleClass('nav-open');
+		$(this).find('span').toggleClass('icon-reorder icon-remove-sign');
 
-			});
+	});
+
+	$('.usage-notes-menu').waypoint('sticky');
+
 
 
 });
 
+
+
+$(document).ready(function() {
+$('.nav').onePageNav({
+	currentClass: 'current',
+	changeHash: false,
+	scrollSpeed: 750,
+	scrollOffset: 30,
+	scrollThreshold: 0.5,
+	filter: '',
+	easing: 'swing',
+	begin: function() {
+		//I get fired when the animation is starting
+	},
+	end: function() {
+		//I get fired when the animation is ending
+	},
+	scrollChange: function($currentListItem) {
+		//I get fired when you enter a section and I pass the list item of the section
+	}
+});	
+	
+});
 
 
 /*! Normalized address bar hiding for iOS & Android (c) @scottjehl MIT License */
