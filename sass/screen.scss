@@ -113,7 +113,7 @@ body {
 
 /*****  HEADER Styles *****/
 
-body > header {
+.page > header {
 	padding: 2em 0;	
 }
 
@@ -125,7 +125,8 @@ body > header {
 	background-size: 100%;
 	background-repeat: no-repeat;
 		@include breakpoint($mq-s-tab) {
-			width: 3.5 * zen-unit-width(); 
+			width: 6 * zen-unit-width(); 
+			margin-bottom: 1em;
 		}
 		@include breakpoint($mq-l-tab) {
 			width: 2.5 * zen-unit-width(); 
@@ -143,7 +144,7 @@ body > header {
 		*display: inline; 
 		*zoom: 1;
 		ul {
-			@include breakpoint($mq-l-tab) {
+			@include breakpoint($mq-s-tab) {
 				display: none; 
 			}
 		}
@@ -180,10 +181,11 @@ body > header {
 /*****  SECTION-ONE Styles *****/
 .section-one {
 	background-color: transparent; 
-	h1 {
+	h1 { 
+		margin-bottom: 0.5em;
 		@include breakpoint($mq-s-tab) {
 			@include zen-clear();
-			@include zen-grid-item(10, 2); 
+			@include zen-grid-item(12, 1); 
 		}
 		@include breakpoint($mq-l-tab) {
 			@include zen-clear();
@@ -215,8 +217,11 @@ body > header {
 	border-left: solid 10px $color-gray-med2; 
 	border-right: solid 10px $color-gray-med2; 
 	border-bottom: solid 10px $color-gray-med2; 
-	padding: 2em;
+	padding: 1em;
 	@include zen-clear();
+	@include breakpoint($mq-s-tab) { 
+		padding: 2em; 
+	}
 	p {
 		text-align: center;
 		@include breakpoint($mq-desk) { 
@@ -237,7 +242,7 @@ body > header {
 	@include breakpoint($mq-s-tab) { 
 		font-size: (16 / $base-font-size) * 1em; 
 		@include zen-clear();
-		@include zen-grid-item(8, 3); 
+		@include zen-grid-item(12, 1); 
 	}
 	@include breakpoint($mq-l-tab) {
 		@include zen-clear();
@@ -265,7 +270,7 @@ body > header {
 		@include zen-clear();
 		@include breakpoint($mq-s-tab) {
 			@include zen-clear();
-			@include zen-grid-item(8, 3); 
+			@include zen-grid-item(10, 2); 
 		}
 		@include breakpoint($mq-l-tab) {
 			@include zen-clear();
@@ -277,9 +282,16 @@ body > header {
 		}
 	}
 	.tab-set { 
-		margin-bottom: 3em;
+		margin-bottom: 3em; 
+		padding: 0;
+		font-size: (12 / $base-font-size) * 1em;
 		@include zen-clear();
-		@include zen-grid-item(10, 2); 
+		@include zen-grid-item(12, 1); 
+		@include breakpoint($mq-l-tab) {
+			font-size: (16 / $base-font-size) * 1em;
+			@include zen-clear();
+			@include zen-grid-item(10, 2); 
+		}
 	}
 	.tab-links { 
 		list-style: none;
@@ -288,13 +300,16 @@ body > header {
 		margin: 0 0 -5px 0;
 		padding: 0;
 		li { 
-			width: 2.5 * zen-unit-width();
+			width: 3.9 * zen-unit-width();
 			list-style: none; 
 			list-style-image: none;
 			text-align: center;
 			display: inline-block; 
 			*display: inline; 
 			*zoom: 1;
+			@include breakpoint($mq-l-tab) {
+				width: 2.5 * zen-unit-width();
+			}
 		}
 		a {
 			color: $color-turquoise; 
@@ -344,34 +359,43 @@ body > header {
 		border: solid 10px $color-turquoise; 
 		display: none;
 		p {
-			padding-left: 1 * zen-unit-width();
+			clear: left;
 			padding-top: 1em; 
 			line-height: 1.5em;
 			display: block;
+			@include breakpoint($mq-l-tab) { 
+				clear: none;
+				padding-left: 1 * zen-unit-width();
+			}
 		}
 		&.active {
 			display: table;
 		}
 	}
-	.tab1icon {
-		width: 2 * zen-unit-width(); 
+	.tabicon {
+		width: 6 * zen-unit-width(); 
+		margin-left: 3 * zen-unit-width();
 		//float: left;
-		background-image: url(../images/tab_icon1.png);
-		background-image: url(../images/tab_icon1.svg), none;
 		background-size: 100%;
-		background-position-y: 50%;
+		background-position: 50%;
 		background-repeat: no-repeat;
-		display: table-cell;
+		display: block;
 		vertical-align: middle;
 			@include breakpoint($mq-s-tab) {
 				//width: 3.5 * zen-unit-width(); 
 			}
-			@include breakpoint($mq-l-tab) {
-				//width: 2.5 * zen-unit-width(); 
+			@include breakpoint($mq-l-tab) { 
+				display: table-cell;
+				width: 2 * zen-unit-width(); 
 			}
 			@include breakpoint($mq-desk) { 
 				//width: 2.5 * zen-unit-width();
 			}
+	}
+
+	.tab1icon {
+		background-image: url(../images/tab_icon1.png);
+		background-image: url(../images/tab_icon1.svg), none;
 	}
 
 
@@ -393,7 +417,7 @@ body > header {
 	margin-bottom: 4em; 
 	position: relative; 
 	height: 100%; 
-	@include breakpoint($mq-s-tab) {
+	@include breakpoint($mq-l-tab) {
 		width: 50%; 
 		&.left {
 			padding-right: 1.5em; 
@@ -419,12 +443,20 @@ body > header {
 	.section-title {
 		border-bottom: solid 2px $color-gray-med2;
 	}
-	.usage-notes-menu {
-		@include breakpoint($mq-s-tab) {
+	.usage-notes-menu { 
+		display: none; 
+		visibility: hidden; 
+		position: absolute; 
+		left: -999em;
+		@include breakpoint($mq-s-tab) { 
+			display: block;
+			visibility: visible; 
+			position: relative; 
+			left: auto;
 			@include zen-float();
 			@include zen-grid-item(3, 1); 
 		}
-		@include breakpoint($mq-l-tab) {
+		@include breakpoint($mq-s-tab) {
 			@include zen-float();
 			@include zen-grid-item(3, 1); 
 			&.stuck {
@@ -432,6 +464,10 @@ body > header {
 				top: 1em; 
 				//width: 20%;
 			}
+		}
+		@include breakpoint($mq-l-tab) {
+			@include zen-float();
+			@include zen-grid-item(3, 1); 
 		}
 		@include breakpoint($mq-desk) { 
 			@include zen-float();
@@ -443,8 +479,21 @@ body > header {
 		@include zen-grid-item(3, 1);
 		.usage-notes-menu {
 			width: 100%; 
+			margin: 0; 
+			padding: 0;
 			&.stuck {
-				width: 17.5%;
+				@include breakpoint($mq-s-tab) { 
+					width: 21.25%;
+				}
+				@include breakpoint($mq-l-tab) { 
+					width: 20.25%;
+				}
+				@include breakpoint($mq-desk) { 
+					width: 20%;
+				}
+				@include breakpoint($mq-desk) { 
+					width: 20.25%;
+				}
 			}
 			
 		}
@@ -505,8 +554,9 @@ body > header {
 /***** /SECTION-FOUR Styles *****/
 
 /*****  FOOTER Styles *****/
-body > footer {
+.page > footer {
 	background-color: $color-orange; 
+	padding: 0;
 	@include zen-clear();
 	h2 {
 		color: #fff;
@@ -519,12 +569,16 @@ body > footer {
 	padding-bottom: 1em;
 }
 .lullabot {
-	width: 2 * zen-unit-width(); 
+	width: 6 * zen-unit-width(); 
 	background-image: url(../images/lullabot.png);
 	background-image: url(../images/lullabot.svg), none;
 	background-size: 100%;
 	background-repeat: no-repeat;
-	margin-left: -0.5em; 
+	margin: 0 auto; 
+	@include breakpoint($mq-s-tab) {
+		 width: 2 * zen-unit-width(); 
+		 margin: 0 0 0 -0.5em;
+	}
 	a {
 		display: block;
 		&:hover {
@@ -534,14 +588,23 @@ body > footer {
 }
 .tagline {
 	color: #fff;
+	text-align: center;
+	@include breakpoint($mq-s-tab) {
+		 text-align: left;
+	}
 }
 
 .footer-menu { 
-	float: right;
+	margin: 0.5em auto; 
+	@include breakpoint($mq-s-tab) {
+		 float: right;
+		 margin: 0; 
+	}
 	ul { 
 		list-style: none;
 		list-style-image: none;
 		text-align: center; 
+		padding: 0;
 		li { 
 			list-style: none; 
 			list-style-image: none;
@@ -590,14 +653,21 @@ pre {
 	}
 	a {
 		display: block; 
-		padding: 0.5em 1.25em;
+		padding: 0.25em 0.65em;
 		background-color: $color-orange; 
 		color: #fff; 
 		line-height: 2em;
 		font-family: $sans-serif-bold;
 		margin-left: -5px; 
-		border-top: solid 10px $color-gray-med2;
-		border-bottom: solid 10px $color-gray-med2;
+		border-top: solid 7px $color-gray-med2;
+		border-bottom: solid 7px $color-gray-med2;
+		font-size: (12 / $base-font-size) * 1em;
+		@include breakpoint($mq-l-tab) {
+			padding: 0.5em 1.25em;
+			border-top: solid 10px $color-gray-med2;
+			border-bottom: solid 10px $color-gray-med2;
+			font-size: (16 / $base-font-size) * 1em;
+		}
 		&:link, &:visited {
 			color: #fff;
 
@@ -607,33 +677,49 @@ pre {
 		}
 		.icon {
 			color: $color-orange-darker;
-			margin-right: 0.5em; 
+			display: block;
+			margin: 0 auto; 
 			font-size: 1.5em;
-			line-height: 0.5em;
+			
+			@include breakpoint($mq-s-tab) {
+				display: inline; 
+				margin: 0 0.5em 0 0; 
+				line-height: 0.5em;
+			}
 		}
 		&.download { 
 			background-color: $color-turquoise;
-			border-left: 10px solid $color-gray-med2;
-			@include border-radius(2em 0 0 2em);
+			border-left: 7px solid $color-gray-med2;
+			@include border-radius(3em 0 0 3em);
+			@include breakpoint($mq-l-tab) {
+				border-left: solid 10px $color-gray-med2;
+			}
 			&:hover {
 				background-color: lighten($color-turquoise, 10%);
 			}
 			.icon {
 				color: $color-turquoise-darker;
-				margin-right: 0.5em;
-				margin-bottom: -0.5em;
+				@include breakpoint($mq-s-tab) {
+					margin-right: 0.5em;
+					margin-bottom: -0.5em;
+				}
 			}
 		}
 		&.github { 
 			background-color: $color-green;
-			border-right: 10px solid $color-gray-med2;
-			@include border-radius(0 2em 2em 0);
+			border-right: 7px solid $color-gray-med2;
+			@include border-radius(0 3em 3em 0);
+			@include breakpoint($mq-l-tab) {
+				border-right: solid 10px $color-gray-med2;
+			}
 			&:hover {
 				background-color: lighten($color-green, 10%);
 			}
 			.icon {
 				color: $color-green-darker;
-				margin-right: 0.5em;
+				@include breakpoint($mq-s-tab) {
+					margin-right: 0.5em;
+				}
 			}
 		}
 		body > footer &, 
@@ -690,9 +776,10 @@ pre {
 }
 
 /* examples styles */
-.example {
+.example { 
+	overflow: hidden;
 	.display {
-		font-size: 8em;
+		//font-size: 8em;
 		color: grey;
 		margin: 0;
 		padding: 0;

@@ -9,8 +9,10 @@ $zen-gutter-width: 1.5em;
 
 .content {
 	@include zen-grid-container; 
+	width: 100%;
 	max-width: 100%; 
 	margin: 0 auto;
+	padding: 0 0.5em;
 }
 
 header {
@@ -47,6 +49,7 @@ header {
 	.content {
 		width: 98%;
 		max-width: 98%; 
+		padding: 0;
 	}
 
 	
