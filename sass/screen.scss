@@ -100,7 +100,7 @@ textarea {
 	font-weight: normal;
 }
 
-body {
+.page {
 	background: $color-gray-lt url(../images/background_1x.png);
 }
 /******* /DESIGN *********/
@@ -112,6 +112,16 @@ body {
 /* styles for modular content sections, including alternate states */
 
 /*****  HEADER Styles *****/
+
+body.nav-open {
+  background-color: $color-turquoise-darker; 
+  background-image: none;
+}
+
+.page {
+	position: relative;
+	@include transition(left 0.3s ease-in-out 0, right 0.3s ease-in-out 0);
+}
 
 .page > header {
 	padding: 2em 0;	
@@ -136,17 +146,154 @@ body {
 		}
 }
 
+/* Off-Canvas CSS */
+#nav-toggle a {
+  float: right;
+  text-align: left;
+  background-color: $color-turquoise-darker;
+  color: #fff;
+  padding: .5em;
+  margin: 0;
+  position: absolute; 
+  top: 0.25em; 
+  right: 0.25em;
+  line-height: 1.5em;
+  font-size: 0.75em;
+  display: block;
+  width: 6.25em; 
+  text-decoration: none;
+  @include border-radius(0.25em);
+}
+#nav-toggle a .icon {
+  font-size: 1.25em;
+  display: inline;
+  line-height: 1em;
+  width: 1.5em;
+  margin-left: 0.5em;
+}
+#nav-toggle a:link, #nav-toggle a:visited {
+  color: #fff;
+}
+@include breakpoint($mq-s-tab) {
+  #nav-toggle a {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    left: -999em;
+  }
+}
+
+.nav-open .page {
+  right: 85%;
+  margin-left: -85;
+  width: 100%;
+  @include translate3d(0, 0, 0);
+}
+@include breakpoint($mq-s-tab) {
+  .nav-open .page {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.js-toggle-dropdown {
+  background-color: white;
+  color: #eee;
+  width: 2em;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  line-height: 0.6em;
+  font-size: 1.5em;
+  cursor: pointer;
+  background-color: transparent;
+  z-index: 99;
+}
+.nav-dropdown-expanded .js-toggle-dropdown {
+  color: #fff;
+}
+.js-toggle-dropdown .icon {
+  line-height: 1.5em;
+  height: 1em;
+}
+@include breakpoint($mq-s-tab) {
+  .js-toggle-dropdown {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    left: -999em;
+  }
+}
+
+.main.menu {
+  clear: both;
+  overflow: hidden;
+  width: 85%;
+  position: absolute;
+  top: 0;
+  right: -185%;
+  display: none;
+  @include transition(right 0.5s ease-in-out, height 0.5s ease-in-out);
+}
+.main.menu.open {
+  right: -110%;
+  height: 100%;
+  padding-top: 1em;
+  display: block;
+  @include translate3d(0, 0, 0);
+}
+@include breakpoint($mq-s-tab) {
+  .main.menu {
+    clear: none;
+    height: auto;
+    overflow: visible;
+    position: relative;
+    width: 100%;
+    right: auto;
+    display: block;
+  }
+}
+
+
+/* END Off-Canvas CSS */
+
+
 .menu.main {
-	float: right; 
-	margin: 0;
+	
+	position: relative;
+	list-style: none; 
+	list-style-image: none; 
+	margin: 0; 
+	padding: 0; 
+	text-align: left; 
+	@include breakpoint($mq-s-tab) { 
+		float: right; 
+	}
 	li {
-		display: inline-block; 
-		*display: inline; 
-		*zoom: 1;
+		list-style: none; 
+		list-style-image: none; 
+		display: block; 
+		margin: 0; 
+		padding: 0;
+		position: relative;
+		@include breakpoint($mq-s-tab) {
+			display: inline-block; 
+			*display: inline; 
+			*zoom: 1;
+		}
 		ul {
+			display: none;
+			
 			@include breakpoint($mq-s-tab) {
 				display: none; 
 			}
+		}
+		&.nav-dropdown-expanded ul {
+			display: block;
 		}
 	}
 	a {
@@ -155,22 +302,33 @@ body {
 		display: block; 
 		padding: 0.5em 1em;
 		&:link, &:visited {
-			color: $color-orange;
+			color: #fff;
+			@include breakpoint($mq-s-tab) {
+				color: $color-orange;
+			}
 		}
 		&:hover, &:active {
-			color: lighten($color-orange, 10%);
-			text-decoration: underline;
-			background-color: transparent;
+			@include breakpoint($mq-s-tab) {
+				color: lighten($color-orange, 10%);
+				text-decoration: underline;
+				background-color: transparent;
+			}
 		}
 		&.download {
-			@include border-radius(2em);
+			@include breakpoint($mq-s-tab) {
+				@include border-radius(2em);
+			}
 			&:link, &:visited {
-				color: #fff; 
-				background-color: $color-orange;
+				@include breakpoint($mq-s-tab) {
+					color: #fff; 
+					background-color: $color-orange;
+				}
 			}
 			&:hover, &:active {
-				background-color: lighten($color-orange, 10%);
-				text-decoration: none;
+				@include breakpoint($mq-s-tab) {
+					background-color: lighten($color-orange, 10%);
+					text-decoration: none;
+				}
 			}
 		}
 	}

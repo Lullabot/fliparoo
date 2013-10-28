@@ -51,7 +51,7 @@ $(function() {
 	});
 
 	// Only add the toggle class if there are child pages
-	$('.nice-menu-down > li > a + ul').after('<span class="js-toggle-dropdown"><span class="icon icon-plus-sign"></span></span>');
+	$('.main.menu > li > a + ul').after('<span class="js-toggle-dropdown"><span class="icon icon-plus-sign"></span></span>');
 	$('.js-toggle-dropdown').click(function(e) {
 		e.preventDefault();
 		$(this).parent().toggleClass('nav-dropdown-expanded');
@@ -70,7 +70,7 @@ $(function() {
 
 	$('#nav-toggle').click(function(e) {
 		e.preventDefault();
-		$('.main-menu').toggleClass('open');
+		$('.main.menu').toggleClass('open');
 		$('body').toggleClass('nav-open');
 		$(this).find('span').toggleClass('icon-reorder icon-remove-sign');
 
