@@ -450,7 +450,7 @@ body.nav-open {
 
 /* line 242, ../sass/screen.scss */
 .main.menu.open {
-  right: -110%;
+  right: -105%;
   height: 100%;
   padding-top: 1em;
   display: block;

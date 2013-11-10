@@ -240,7 +240,7 @@ body.nav-open {
   @include transition(right 0.5s ease-in-out, height 0.5s ease-in-out);
 }
 .main.menu.open {
-  right: -110%;
+  right: -105%;
   height: 100%;
   padding-top: 1em;
   display: block;

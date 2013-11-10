@@ -75,6 +75,13 @@ $(function() {
 		$(this).find('span').toggleClass('icon-reorder icon-remove-sign');
 
 	});
+	// not sure why the below JS isn't firing - need this to 'close up' the off-canvas nav bit when it scrolls down the page
+	$('.main.menu.open > li > a').click(function(e) {
+		$('body').removeClass('nav-open');
+		$('.main.menu').removeClass('open');
+		$('#nav-toggle').find('span').toggleClass('icon-reorder icon-remove-sign');
+		e.preventDefault();
+	});
 
 	$('.usage-notes-menu').waypoint('sticky');
 
@@ -102,7 +109,7 @@ $('.nav').onePageNav({
 	scrollChange: function($currentListItem) {
 		//I get fired when you enter a section and I pass the list item of the section
 	}
-});	
+});
 	
 });
 
