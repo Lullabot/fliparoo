@@ -272,6 +272,11 @@ body.nav-open {
 	text-align: left; 
 	@include breakpoint($mq-s-tab) { 
 		float: right; 
+		text-align: right;
+		width: 12 * zen-unit-width();
+	}
+	@include breakpoint($mq-l-tab) { 
+		width: 8 * zen-unit-width();
 	}
 	li {
 		list-style: none; 
@@ -649,16 +654,16 @@ body.nav-open {
 			padding: 0;
 			&.stuck {
 				@include breakpoint($mq-s-tab) { 
-					width: 21.25%;
+					width: 2 * zen-unit-width();
 				}
 				@include breakpoint($mq-l-tab) { 
-					width: 20.25%;
+					width: 2.5 * zen-unit-width();
 				}
 				@include breakpoint($mq-desk) { 
-					width: 20%;
+					width: 2.25 * zen-unit-width();
 				}
-				@include breakpoint($mq-desk) { 
-					width: 20.25%;
+				@include breakpoint($mq-desk-plus) { 
+					width: 2 * zen-unit-width();
 				}
 			}
 			
@@ -943,7 +948,8 @@ pre {
 
 /* examples styles */
 .example { 
-	overflow: hidden;
+	//overflow-x: hidden;
+	//overflow-y: visible;
 	.display {
 		//font-size: 8em;
 		color: grey;
