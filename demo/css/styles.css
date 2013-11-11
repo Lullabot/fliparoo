@@ -1,0 +1,112 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+.page {
+  padding: 2em 5%;
+}
+
+h2 {
+  margin: 1em 0 0.5em 0;
+  clear: both;
+}
+
+ul {
+  font-size: 8em;
+  color: grey;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+img {
+	width: 100%; 
+	max-width: 100%; 
+	height: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+.example pre {
+  white-space: pre-wrap;
+  clear: both;
+}
+
+ul.display li {
+  display: block;
+  float: left;
+  width: 25%;
+  min-width: 25%;
+  text-align: center;
+  /*position: relative;
+  box-sizing: border-box;*/
+}
+
+ul.display li .fliparoo-display {
+  background-color: #fff;
+  border: 1px solid #CCC;
+}
+
+ul.single li {
+  display: block;
+  float: left;
+  width: 20%;
+  text-align: center;
+}
+
+ul.single li .fliparoo-display {
+  color: #fff;
+  background-color: #666;
+  border: 2px #CCC solid;
+  box-sizing: border-box;
+}
+
+ul#kittens li, ul#robots li {
+  display: block;
+  float: left;
+}
+
+ul#kittens li,
+ul#kittens li div.fliparoo-display, 
+ul#robots li,
+ul#robots li div.fliparoo-display {
+  height: 160px;
+  overflow: hidden;
+}
+
+/* 
+ * undo styling on the li elements
+ * once they have been processed
+ */
+ul#kittens li.fliparoo-display-container,
+ul#robots li.fliparoo-display-container {
+  height: auto;
+  overflow: visible;
+}
+
+#table-test {
+  font-size: 4em;
+  width: 75%;
+}
+
+#table-test td {
+  width: 20%;
+  /* box-shadow: 1px 1px 3px black */
+}
+
+#table-test td, 
+#table-test td div {
+  height: 1.2em;
+  text-align: center;
+}
+
+#table-test .fliparoo-front {
+  background-color: #ffd7d7;
+  box-shadow: 1px 1px 5px black;
+}
+
+#table-test .fliparoo-back {
+  background-color: #d7dbff;
+  box-shadow: 1px 1px 5px black;
+}
