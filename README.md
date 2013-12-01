@@ -161,5 +161,5 @@ Fliparoo uses the Transit plugin, which applies CSS3 transition animations to th
 Older browsers without support for 3D transformations will simply get no animations. 
 
 ## Legal Stuff
-Fliparoo is copyright �2013 by [Lullabot](http://www.lullabot.com) and licensed under the [MIT License](http://opensource.org/licenses/MIT) without waranty or guarantees of any kind.
+Fliparoo is copyright &copy;2013 by [Lullabot](http://www.lullabot.com) and licensed under the [MIT License](http://opensource.org/licenses/MIT) without waranty or guarantees of any kind.
 
