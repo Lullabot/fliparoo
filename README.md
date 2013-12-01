@@ -45,6 +45,7 @@ See also:
 * http://blog.bearded.com/post/41445520202/slide-rules
 * http://krogsgard.com/2013/sliders-suck/
 * http://www.nngroup.com/articles/auto-forwarding/
+* http://insideintercom.io/why-cards-are-the-future-of-the-web/
 
 ## Advantages of Fliparoo
 
