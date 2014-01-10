@@ -115,6 +115,13 @@
       // stick on the back side and rotate it appropriately
       $('<div class="fliparoo-display fliparoo-back"></div>').appendTo(this).css(rotation);
     });
+
+    // initialize flipMarker, change backface-visibility (for IE11)
+    if ($.fn.checkIfIE11()) {
+      flipMarker = 1;
+      $('.fliparoo-display').css('-ms-backface-visibility', 'visible');
+      $('.fliparoo-display').css('backface-visibility', 'visible');
+    }
     
     var advance = function() {
       // clear any existing timer (if advance() was called early somehow)
@@ -158,6 +165,10 @@
       
       // Function to execute after animation
       var postAnimation = function() {
+        // increase flipMarker each time all items are flipped (for IE11)
+        if (typeof flipMarker != 'undefined' && delay == opts.delay + opts.setDelay) {
+          flipMarker++;
+        }
         // when all the animations are done...
         $(this).removeClass('fliparoo-animating');
         // set the timer for the next one
@@ -166,6 +177,14 @@
       
       var animationFunc = opts.animationFunc;
 
+      // change z-index depending on flipMarker (for IE11)
+      if (typeof flipMarker != 'undefined') {
+        if (flipMarker%2 == 0) {
+          $(dispCont).find('.fliparoo-front').css('z-index', 10);
+        } else {
+          $(dispCont).find('.fliparoo-front').css('z-index', 0);
+        }
+      }
       // do the transition
       $(dispCont).addClass('fliparoo-animating')[animationFunc](transition, opts.transTime, opts.easing, postAnimation);
       
@@ -215,7 +234,30 @@
     $(this).data('fliparoo').resume();
     return this;
   };
-  
+
+  $.fn.checkIfIE11 = function()
+  {
+    var rv = -1;
+    if (navigator.appName == 'Microsoft Internet Explorer')
+    {
+      var ua = navigator.userAgent;
+      var re  = new RegExp("MSIE ([0-9]{1,}[\.0-9]{0,})");
+      if (re.exec(ua) != null)
+        rv = parseFloat( RegExp.$1 );
+    }
+    else if (navigator.appName == 'Netscape')
+    {
+      var ua = navigator.userAgent;
+      var re  = new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})");
+      if (re.exec(ua) != null)
+        rv = parseFloat( RegExp.$1 );
+    }
+
+    if (rv == 11) return true;
+
+    return false;
+  }
+
   // UTILITY FUNCTIONS
   
   // Shuffle (randomize) an array
