@@ -20,6 +20,9 @@
   
 </head>
 <body>
+  <a href="https://github.com/you"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+  <h1>Fliparoo</h1>
+  <h2><a href="https://github.com/Lullabot/fliparoo">https://github.com/Lullabot/fliparoo</a></h2>
 
   <h3 id="double">Display & Queue list:</h3>
   <p>The best practice for Fliparoo is to use two sets of elements. One is a "display" set (such as a &lt;li&gt; list) which acts as a container for the elements being shown. The other is a "queue" set which acts as a stockpile. By hiding the queue list with CSS, there will not be a FOUC (flash of unstyled content) between the time that the page begins to render and the time that the Fliparoo script runs. Perhaps more important is that if Javascript doesn't run on the page, the queue list elements will remain hidden and the fallback will be the original non-animating display elements.</p>
